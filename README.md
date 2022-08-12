@@ -1,2 +1,3 @@
-# battleship
+# Battleship
+――――――――――――――――――――
 Single player battleship game | Runnable in Replit and similar IDEs
