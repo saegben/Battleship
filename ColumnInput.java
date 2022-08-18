@@ -2,7 +2,6 @@
 import java.util.Scanner;
 
 class ColumnInput {
-  
   Scanner userColumnInput = new Scanner(System.in);
   int UColumn;
 

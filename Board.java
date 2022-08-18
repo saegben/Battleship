@@ -3,7 +3,7 @@ class Board {
   Out o;
   RowInput RInfo;
   ColumnInput CInfo;
-  
+
 	public Board () {
 		o = new Out();
     RInfo = new RowInput();
@@ -166,15 +166,12 @@ class Board {
     // Invalid input prompts error
     else {
       o.msgR("[ERROR 01] INVALID COLUMN/ROW INPUT\n");
-    }
-
-    // If invalid:
-    if (validGuess == false) {
       o.msgB("Rows must be between A-L inclusive, columns must be between 0-14 inclusive...");
     }
+
     // If valid:
-    else {
-		  if (hit == false) {
+    if (validGuess) {
+      if (hit == false) {
         o.msgY("MISS!\n");
       }
       else {
@@ -263,9 +260,8 @@ class Board {
     }
 
     // Display hits
-		String msg = "Hits: " + hits + "\n";
-		o.msgB(msg);
-		return hits;
+    o.msgB("Hits: " + TEXT_RESET + hits + "\n");
+    return hits;
     
   }
 
@@ -352,7 +348,6 @@ class Board {
   public String[] L = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
   
   
-  // CHANGE AFTER ADDED SHIPS
 	public String shipRow;
     
 	public int columnOne;
