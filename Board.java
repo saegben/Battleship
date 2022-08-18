@@ -9,14 +9,12 @@ class Board {
     RInfo = new RowInput();
     CInfo = new ColumnInput();
 	}
-  
-  // Colors
+
+  // Text Colors
   public static final String TEXT_RESET = "\u001B[0m";{}
   public static final String TEXT_BLACK = "\u001B[30m";{}
-  public static final String TEXT_RED = "\u001B[31m";{}
   public static final String TEXT_GREEN = "\u001B[32m";{}
-  public static final String TEXT_BLUE = "\u001B[34m";{}
-  public static final String TEXT_YELLOW = "\u001B[33m";{}
+  public static final String TEXT_YELLOW = "\u001B[93m";{}
 
   // Place ships on board
 	public void placeShip(int ship, int row, int startColumn) {
@@ -64,18 +62,18 @@ class Board {
     boolean validGuess = false;
     
     // Row
-    System.out.println(TEXT_BLUE + "Which Row? (A/B/C/D/E/F/G/H/I/J/K/L)" + TEXT_RESET);
+    o.msgB("Which Row? (A/B/C/D/E/F/G/H/I/J/K/L)\n");
     RowInput RInfo = new RowInput();
     RInfo.promptRowInput();
     String row = RInfo.getRowInput();
     
     // Column
-    System.out.println(TEXT_BLUE + "Which Column? (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15)" + TEXT_RESET);
+    o.msgB("Which Column? (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15)\n");
     ColumnInput CInfo = new ColumnInput();
     CInfo.promptColumnInput();
     int column = CInfo.getColumnInput();
 
-    o.msg("\n\n You entered: " + TEXT_RESET + row + column + "\n");
+    o.msgB("\n\n You entered: " + TEXT_RESET + row + column + "\n");
 
     // Check user input
 		if (row.equals(shipRow) || row.equals(shipTwoRow)) {
@@ -167,23 +165,23 @@ class Board {
     else if ((row.equals("L")) && column < 16 && column > 0) { L[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
     // Invalid input prompts error
     else {
-      System.out.println(TEXT_RED + "[ERROR 01] INVALID COLUMN/ROW INPUT\n" + TEXT_RESET);
+      o.msgR("[ERROR 01] INVALID COLUMN/ROW INPUT\n");
     }
 
     // If invalid:
     if (validGuess == false) {
-      o.msg("Rows must be between A-L inclusive, columns must be between 0-14 inclusive...");
+      o.msgB("Rows must be between A-L inclusive, columns must be between 0-14 inclusive...");
     }
     // If valid:
     else {
 		  if (hit == false) {
-        o.msg(TEXT_RESET + TEXT_YELLOW + "MISS!" + TEXT_RESET);
+        o.msgY("MISS!\n");
       }
       else {
-        o.msg(TEXT_RESET + TEXT_YELLOW + ".⁎˚⭒✷💥 HIT! 💥✷࿏˚*." + TEXT_RESET);
+        o.msgY(".⁎˚⭒✷💥 HIT! 💥✷࿏˚*.\n");
       }
     }
-  
+
   }
 
   // Check for hits
@@ -263,80 +261,81 @@ class Board {
 			  }
       }
     }
-    
+
     // Display hits
-		String msg = "Hits: " + hits;
-		System.out.println(msg);
+		String msg = "Hits: " + hits + "\n";
+		o.msgB(msg);
 		return hits;
+    
   }
 
   // Game board
 	public void showBoard () {
-		o.msg("\n\t\t\t _____GAME BOARD_____");
-		System.out.println("   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15");
-    System.out.println(TEXT_YELLOW + "   ───────────────────────────────────────────" + TEXT_RESET);
+		o.msgW("\n\t\t\t _____GAME BOARD_____\n");
+		o.msgW("   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15\n");
+    o.msgY("   ───────────────────────────────────────────\n");
 		
-		System.out.print("A" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("A" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(A[idx]);
-			System.out.print("  ");
+			o.msgW(A[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nB" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nB" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(B[idx]);
-			System.out.print("  ");
+			o.msgW(B[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nC" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nC" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(C[idx]);
-			System.out.print("  ");
+			o.msgW(C[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nD" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nD" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(D[idx]);
-			System.out.print("  ");
+			o.msgW(D[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nE" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nE" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(E[idx]);
-			System.out.print("  ");
+			o.msgW(E[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nF" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nF" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(F[idx]);
-			System.out.print("  ");
+			o.msgW(F[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nG" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nG" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(G[idx]);
-			System.out.print("  ");
+			o.msgW(G[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nH" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nH" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(H[idx]);
-			System.out.print("  ");
+			o.msgW(H[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nI" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nI" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(I[idx]);
-			System.out.print("  ");
+			o.msgW(I[idx]);
+			o.msgW("  ");
 		}
-		System.out.print("\nJ" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgW("\nJ" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(J[idx]);
-			System.out.print("  ");
+			o.msgW(J[idx]);
+			o.msgW("  ");
 		}
-    System.out.print("\nK" + TEXT_YELLOW + "│ " + TEXT_RESET);
+    o.msgW("\nK" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(K[idx]);
-			System.out.print("  ");
+			o.msgW(K[idx]);
+			o.msgW("  ");
 		}
-    System.out.print("\nL" + TEXT_YELLOW + "│ " + TEXT_RESET);
+    o.msgW("\nL" + TEXT_YELLOW + "│ " + TEXT_RESET);
 		for (int idx = 1; idx < 16; ++idx) {
-			System.out.print(L[idx]);
-			System.out.print("  ");
+			o.msgW(L[idx]);
+		  o.msgW("  ");
 		}
-		System.out.println("\n");
+		o.msgW("\n");
 	}
   
   public String[] A = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};

@@ -1,9 +1,9 @@
 public class Main {
-	public static void main(String[] args) { 
+	public static void main(String[] args) {   
     // Messages
     Out o = new Out();
-		o.msg("Welcome to Battleship!");
-		o.msg("Try to hit my two ships within 20 guesses.\n");
+		o.msgB("Welcome to Battleship!\n");
+		o.msgB("Try to hit my two ships within 20 guesses.\n");
 
     Board b = new Board();
 
@@ -23,8 +23,8 @@ public class Main {
 
 
     // Display ship locations
-    o.msg("ship 1 position: " + 1 + " row: " + rowRandom1 + " column: " + columnStartRandom1);
-    o.msg("ship 2 position: " + 2 + " row: " + rowRandom2 + " column: " + columnStartRandom2);
+    //o.msgW("ship 1 position: " + 1 + " row: " + rowRandom1 + " column: " + columnStartRandom1);
+    //o.msgW("ship 2 position: " + 2 + " row: " + rowRandom2 + " column: " + columnStartRandom2);
 
     // Handle hits
     int hits = 0;
@@ -37,17 +37,17 @@ public class Main {
 
       // Handle guesses
       --guesses;
-      o.msg("Guesses: " + guesses);
+      o.msgW("Guesses: " + guesses + "\n");
       if (guesses == 0) break;
 		}
 
 		if (guesses == 0) {
-			o.msg("\n\n\nOhhh yeaaahhhhh!!!!");
-			o.msg("You had a good run! Sorta.. Well, you can always try again..");
+			o.msgB("\n\n\nOhhh yeaaahhhhh!!!!\n");
+			o.msgB("You had a good run! Sorta.. Well, you can always try again..");
 		}
 		else {
-			o.msg("\n\n\nYou sunk my ships!!!!");
-			o.msg("Thanks for playing!!!!");
+			o.msgB("\n\n\nYou sunk my ships!!!!\n");
+			o.msgB("Thanks for playing!!!!");
 		}
     
 	}
