@@ -7,14 +7,24 @@ public class Main {
 
     Board b = new Board();
 
-    int rowRandom1 = (int)(Math.random() * 7); // * Amount of rows
-		int columnStartRandom1 = (int)(Math.random() * 2); // * Ship length
-
-    int rowRandom2 = 7 + (int)(Math.random() * 15); // * Amount of rows
-		int columnStartRandom2 = (int)(Math.random() * 4); // * Ship length
-    
+    int max = 10;
+    int min = 1;
+    int range = max - min + 1;
+ 
+    // Ship 1
+    int rowRandom1 = (int)(Math.random() * range) + min;
+    int columnStartRandom1 = (int)(Math.random() * range) + min;
     b.placeShip(1, rowRandom1, columnStartRandom1);
+
+    // Ship 2
+    int rowRandom2 = (int)(Math.random() * range) + min;
+    int columnStartRandom2 = (int)(Math.random() * range) + min;
     b.placeShip(2, rowRandom2, columnStartRandom2);
+
+
+    // Display ship locations
+    o.msg("ship 1 position: " + 1 + " row: " + rowRandom1 + " column: " + columnStartRandom1);
+    o.msg("ship 2 position: " + 2 + " row: " + rowRandom2 + " column: " + columnStartRandom2);
 
     // Handle hits
     int hits = 0;
