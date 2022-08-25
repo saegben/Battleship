@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Main {
 	public static void main(String[] args) {   
     // Messages
@@ -6,22 +8,31 @@ public class Main {
 		o.msgB("Try to hit my two ships within 20 guesses.\n\n");
 
     Board b = new Board();
+    
+    // ROWS
+    Random randNum1 = new Random();
+    Set<Integer> rowSet = new LinkedHashSet<Integer>();
+    while (rowSet.size() < 2) { // amount of generated numbers
+      rowSet.add(randNum1.nextInt(12) + 1); // row range
+    }
+    Integer[] rowSetArray = new Integer[rowSet.size()];
+    rowSetArray = rowSet.toArray(rowSetArray);
+    
+    // COLUMNS
+    Random randNum2 = new Random();
+    Set<Integer> colSet = new LinkedHashSet<Integer>();
+    while (colSet.size() < 2) { // amount of generated numbers
+      colSet.add(randNum2.nextInt(11) + 1); // column range
+    }
+    Integer[] colSetArray = new Integer[colSet.size()];
+    colSetArray = colSet.toArray(colSetArray);
+    
+    // Place Ships
+    b.placeShip(1, rowSetArray[0], colSetArray[0]);
+    b.placeShip(2, rowSetArray[1], colSetArray[1]);
 
- 
-    // Ship 1
-    int rowRandom1 = (int)(Math.random() * 10);
-    int columnStartRandom1 = (int)(Math.random() * 10);
-    b.placeShip(1, rowRandom1, columnStartRandom1);
-
-    // Ship 2
-    int rowRandom2 = (int)(Math.random() * 10);
-    int columnStartRandom2 = (int)(Math.random() * 10);
-    b.placeShip(2, rowRandom2, columnStartRandom2);
-
-
-    // Display ship locations
-    o.msgW("ship " + 1 + " position, row: " + rowRandom1 + " column: " + columnStartRandom1 + "\n");
-    o.msgW("ship " + 2 + " position, row: " + rowRandom2 + " column: " + columnStartRandom2 + "\n");
+    // Display Ship Positions
+    b.showShips(false);
 
     // Handle Game
     boolean win = false;

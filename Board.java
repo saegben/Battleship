@@ -1,3 +1,5 @@
+import java.util.*;
+
 // Handle board
 class Board {
   Out o;
@@ -168,6 +170,7 @@ class Board {
       o.msgR("[ERROR 01] INVALID COLUMN/ROW INPUT\n");
       o.msgB("Rows must be between A-L inclusive, columns must be between 0-14 inclusive...");
     }
+    
 
     // If valid:
     if (validGuess) {
@@ -361,4 +364,30 @@ class Board {
 	public int columnThreeShipTwo;
 	public int columnFourShipTwo;
 	public int columnFiveShipTwo;
+
+
+  // Show Ship Pieces
+  public void showShips(boolean toggled) {
+    if (toggled) {
+      System.out.println("\nship 1 position:");
+
+      System.out.println("Row: " + shipRow);
+      System.out.println("Columns: ");
+      System.out.println(columnOne);
+      System.out.println(columnTwo);
+      System.out.println(columnThree);
+
+      System.out.println("\nship 2 position:");
+      
+      System.out.println("Row: " + shipTwoRow);
+      System.out.println("Columns: ");
+      System.out.println(columnOneShipTwo);
+      System.out.println(columnTwoShipTwo);
+      System.out.println(columnThreeShipTwo);
+      System.out.println(columnFourShipTwo);
+      System.out.println(columnFiveShipTwo);
+      
+    }
+  }
+  
 }
