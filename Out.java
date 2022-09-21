@@ -1,22 +1,22 @@
 // Decorate messages
 class Out {
 	public void msgW (String w) {
-    System.out.print(TEXT_WHITE + w + TEXT_RESET);
+    System.out.print(TEXT_RESET + TEXT_WHITE + w + TEXT_RESET);
   }
   public void msgBk (String bla) {
-    System.out.print(TEXT_BLACK + bla + TEXT_RESET);
+    System.out.print(TEXT_RESET + TEXT_BLACK + bla + TEXT_RESET);
   }
   public void msgB (String blu) {
-    System.out.print(TEXT_BLUE + blu + TEXT_RESET);
+    System.out.print(TEXT_RESET + TEXT_BLUE + blu + TEXT_RESET);
   }
   public void msgR (String r) {
-    System.out.print(TEXT_RED + r + TEXT_RESET);
+    System.out.print(TEXT_RESET + TEXT_RED + r + TEXT_RESET);
   }
   public void msgY (String y) {
-    System.out.print(TEXT_YELLOW + y + TEXT_RESET);
+    System.out.print(TEXT_RESET + TEXT_YELLOW + y + TEXT_RESET);
   }
   public void msgG (String g) {
-    System.out.print(TEXT_GREEN + g + TEXT_RESET);
+    System.out.print(TEXT_RESET + TEXT_GREEN + g + TEXT_RESET);
   }
   
   // Text colors

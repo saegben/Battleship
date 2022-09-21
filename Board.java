@@ -18,8 +18,8 @@ class Board {
   public static final String TEXT_GREEN = "\u001B[32m";{}
   public static final String TEXT_YELLOW = "\u001B[93m";{}
 
-  // Place ships on board
-	public void placeShip(int ship, int row, int startColumn) {
+  // Place ship one
+	public void placeShipOne(int ship, int row, int columnOne, int columnTwo, int columnThree) {
 	  if (ship == 1) {
       if (row == 0) shipRow = "A";
 		  else if (row == 1) shipRow = "B";
@@ -33,11 +33,16 @@ class Board {
 		  else if (row == 9) shipRow = "J";
       else if (row == 10) shipRow = "K";
       else if (row == 11) shipRow = "L";
-  		columnOne = startColumn;
-      columnTwo = startColumn + 1;
-      columnThree = startColumn + 2;
+      columnOneShipOne = columnOne;
+      columnTwoShipOne = columnTwo;
+      columnThreeShipOne = columnThree;
+    }
+	}
+  
+  // Place ship two
+  public void placeShipTwo(int ship, int row, int columnOne, int columnTwo, int columnThree, int columnFour, int columnFive) {
+    if (ship == 2) {
       
-    } else if (ship == 2) {
       if (row == 0) shipTwoRow = "A";
 		  else if (row == 1) shipTwoRow = "B";
 		  else if (row == 2) shipTwoRow = "C";
@@ -50,11 +55,11 @@ class Board {
 		  else if (row == 9) shipTwoRow = "J";
       else if (row == 10) shipTwoRow = "K";
       else if (row == 11) shipTwoRow = "L";
-  		columnOneShipTwo = startColumn;
-  		columnTwoShipTwo = startColumn + 1;
-  		columnThreeShipTwo = startColumn + 2;
-  		columnFourShipTwo = startColumn + 3;
-  		columnFiveShipTwo = startColumn + 4;
+      columnOneShipTwo = columnOne;
+      columnTwoShipTwo = columnTwo;
+      columnThreeShipTwo = columnThree;
+      columnFourShipTwo = columnFour;
+      columnFiveShipTwo = columnFive;
     }
 	}
 
@@ -80,9 +85,9 @@ class Board {
     // Check user input
 		if (row.equals(shipRow) || row.equals(shipTwoRow)) {
 			if (
-				(column == columnOne) ||
-				(column == columnTwo) ||
-				(column == columnThree) ||
+				(column == columnOneShipOne) ||
+				(column == columnTwoShipOne) ||
+				(column == columnThreeShipOne) ||
         (column == columnOneShipTwo) ||
 				(column == columnTwoShipTwo) ||
 				(column == columnThreeShipTwo) ||
@@ -170,7 +175,6 @@ class Board {
       o.msgR("[ERROR 01] INVALID COLUMN/ROW INPUT\n");
       o.msgB("Rows must be between A-L inclusive, columns must be between 0-14 inclusive...");
     }
-    
 
     // If valid:
     if (validGuess) {
@@ -191,9 +195,9 @@ class Board {
 		int hits = 0;
     
     if (
-			(column == columnOne) ||
-			(column == columnTwo) ||
-			(column == columnThree) ||
+			(column == columnOneShipOne) ||
+			(column == columnTwoShipOne) ||
+			(column == columnThreeShipOne) ||
       (column == columnOneShipTwo) ||
 			(column == columnTwoShipTwo) ||
 			(column == columnThreeShipTwo) ||
@@ -353,9 +357,9 @@ class Board {
   
 	public String shipRow;
     
-	public int columnOne;
-	public int columnTwo;
-	public int columnThree;
+	public int columnOneShipOne;
+	public int columnTwoShipOne;
+	public int columnThreeShipOne;
 
   public String shipTwoRow;
 
@@ -369,23 +373,17 @@ class Board {
   // Show Ship Pieces
   public void showShips(boolean toggled) {
     if (toggled) {
-      System.out.println("\nship 1 position:");
+      o.msgY("\nShip 1 position: \n");
+      o.msgY(shipRow + columnOneShipOne + ", " + 
+             shipRow + columnTwoShipOne + ", " + 
+             shipRow + columnThreeShipOne);
 
-      System.out.println("Row: " + shipRow);
-      System.out.println("Columns: ");
-      System.out.println(columnOne);
-      System.out.println(columnTwo);
-      System.out.println(columnThree);
-
-      System.out.println("\nship 2 position:");
-      
-      System.out.println("Row: " + shipTwoRow);
-      System.out.println("Columns: ");
-      System.out.println(columnOneShipTwo);
-      System.out.println(columnTwoShipTwo);
-      System.out.println(columnThreeShipTwo);
-      System.out.println(columnFourShipTwo);
-      System.out.println(columnFiveShipTwo);
+      o.msgY("\nShip 2 position: \n");
+      o.msgY(shipTwoRow + columnOneShipTwo + ", " + 
+             shipTwoRow + columnTwoShipTwo + ", " + 
+             shipTwoRow + columnThreeShipTwo + ", " + 
+             shipTwoRow + columnFourShipTwo + ", " + 
+             shipTwoRow + columnFiveShipTwo);
       
     }
   }
