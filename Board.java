@@ -1,6 +1,5 @@
 import java.util.*;
 
-// Handle board
 class Board {
   Out o;
   RowInput RInfo;
@@ -42,7 +41,6 @@ class Board {
   // Place ship two
   public void placeShipTwo(int ship, int row, int columnOne, int columnTwo, int columnThree, int columnFour, int columnFive) {
     if (ship == 2) {
-      
       if (row == 0) shipTwoRow = "A";
 		  else if (row == 1) shipTwoRow = "B";
 		  else if (row == 2) shipTwoRow = "C";
@@ -64,7 +62,8 @@ class Board {
 	}
 
   // Handle user input
-	public void handleUserGuess() {
+  int hits = 0;
+	public int handleUserGuess() {
 		boolean hit = false;
     boolean validGuess = false;
     
@@ -80,196 +79,128 @@ class Board {
     CInfo.promptColumnInput();
     int column = CInfo.getColumnInput();
 
-    o.msgB("\n\n You entered: " + TEXT_RESET + row + column + "\n");
+    String userInput = row + column;
+    o.msgB("\n\n You entered: " + TEXT_RESET + userInput + "\n");
 
-    // Check user input
-		if (row.equals(shipRow) || row.equals(shipTwoRow)) {
-			if (
-				(column == columnOneShipOne) ||
-				(column == columnTwoShipOne) ||
-				(column == columnThreeShipOne) ||
-        (column == columnOneShipTwo) ||
-				(column == columnTwoShipTwo) ||
-				(column == columnThreeShipTwo) ||
-				(column == columnFourShipTwo) ||
-				(column == columnFiveShipTwo)
-			) {
-        // Determine if hit
-				if (row.equals("A")) {
-					A[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("B")) {
-					B[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("C")) {
-					C[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("D")) {
-					D[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("E")) {
-					E[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("F")) {
-					F[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("G")) {
-					G[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("H")) {
-					H[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("I")) {
-					I[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-				else if (row.equals("J")) {
-					J[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-        else if (row.equals("K")) {
-					K[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-        else if (row.equals("L")) {
-					L[column] = TEXT_GREEN + "X" + TEXT_RESET;
-					hit = true;
-          validGuess = true;
-				}
-			}
-		}
-    // Update position's status, mark valid input
-    else if ((row.equals("A")) && column < 16 && column > 0) { A[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("B")) && column < 16 && column > 0) { B[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("C")) && column < 16 && column > 0) { C[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("D")) && column < 16 && column > 0) { D[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("E")) && column < 16 && column > 0) { E[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("F")) && column < 16 && column > 0) { F[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("G")) && column < 16 && column > 0) { G[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("H")) && column < 16 && column > 0) { H[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("I")) && column < 16 && column > 0) { I[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-		else if ((row.equals("J")) && column < 16 && column > 0) { J[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-    else if ((row.equals("K")) && column < 16 && column > 0) { K[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-    else if ((row.equals("L")) && column < 16 && column > 0) { L[column] = TEXT_BLACK + "+" + TEXT_RESET; validGuess = true; }
-    // Invalid input prompts error
+    // Ship One positions
+    String shipOnePieceOne = shipRow + columnOneShipOne;
+    String shipOnePieceTwo = shipRow + columnTwoShipOne;
+    String shipOnePieceThree = shipRow + columnThreeShipOne;
+
+    // Ship Two positions
+    String shipTwoPieceOne = shipTwoRow + columnOneShipTwo;
+    String shipTwoPieceTwo = shipTwoRow + columnTwoShipTwo;
+    String shipTwoPieceThree = shipTwoRow + columnThreeShipTwo;
+    String shipTwoPieceFour = shipTwoRow + columnFourShipTwo;
+    String shipTwoPieceFive = shipTwoRow + columnFiveShipTwo;
+
+    // Check for ship one
+    if (userInput.equals(shipOnePieceOne) || userInput.equals(shipOnePieceTwo) || userInput.equals(shipOnePieceThree)) {
+      hit = true;
+
+      if (row.equals("A")) {
+        A[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("B")) {
+        B[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("C")) {
+        C[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("D")) {
+        D[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("E")) {
+        E[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("F")) {
+        F[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("G")) {
+        G[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("H")) {
+        H[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("I")) {
+        I[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("J")) {
+        J[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("K")) {
+        K[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("L")) {
+        L[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else {
+        o.msgR("[ERROR]");
+      }
+    } 
+
+    // Check for ship two
+    else if (userInput.equals(shipTwoPieceOne) || userInput.equals(shipTwoPieceTwo) || userInput.equals(shipTwoPieceThree) || userInput.equals(shipTwoPieceFour) || userInput.equals(shipTwoPieceFive)) {
+      hit = true;
+
+      if (row.equals("A")) {
+        A[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("B")) {
+        B[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("C")) {
+        C[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("D")) {
+        D[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("E")) {
+        E[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("F")) {
+        F[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("G")) {
+        G[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("H")) {
+        H[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("I")) {
+        I[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("J")) {
+        J[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("K")) {
+        K[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else if (row.equals("L")) {
+        L[column] = TEXT_GREEN + "X" + TEXT_RESET;
+      } else {
+        o.msgR("[ERROR]");
+      }
+    }
+
+    // If all ships were missed
     else {
-      o.msgR("[ERROR 01] INVALID COLUMN/ROW INPUT\n");
-      o.msgB("Rows must be between A-L inclusive, columns must be between 0-14 inclusive...");
-    }
-
-    // If valid:
-    if (validGuess) {
-      if (hit == false) {
-        o.msgY("MISS!\n");
-      }
-      else {
-        o.msgY(".⁎˚⭒✷💥 HIT! 💥✷࿏˚*.\n");
-      }
-    }
-
-  }
-
-  // Check for hits
-	public int checkWinStatus() {
-    String row = RInfo.getRowInput();
-    int column = CInfo.getColumnInput();
-		int hits = 0;
-    
-    if (
-			(column == columnOneShipOne) ||
-			(column == columnTwoShipOne) ||
-			(column == columnThreeShipOne) ||
-      (column == columnOneShipTwo) ||
-			(column == columnTwoShipTwo) ||
-			(column == columnThreeShipTwo) ||
-			(column == columnFourShipTwo) ||
-			(column == columnFiveShipTwo)
-		) {
-      if ((shipRow == "A") || (shipTwoRow == "A")) { 
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && A[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "B") || (shipTwoRow == "B")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && B[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "C") || (shipTwoRow == "C")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && C[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "D") || (shipTwoRow == "D")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && D[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "E") || (shipTwoRow == "E")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && E[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "F") || (shipTwoRow == "F")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && F[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "G") || (shipTwoRow == "G")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && G[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "H") || (shipTwoRow == "H")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && H[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "I") || (shipTwoRow == "I")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && I[column] == "X") ++hits;
-			  }
-      }
-		  if ((shipRow == "J") || (shipTwoRow == "J")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && J[column] == "X") ++hits;
-			  }
-      }
-      if ((shipRow == "K") || (shipTwoRow == "K")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && K[column] == "X") ++hits;
-			  }
-      }
-      if ((shipRow == "L") || (shipTwoRow == "L")) {
-			  for (int idx = 1; idx < 16; ++idx) {
-				  if (column == idx && L[column] == "X") ++hits;
-			  }
+      if (row.equals("A")) {
+        A[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("B")) {
+        B[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("C")) {
+        C[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("D")) {
+        D[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("E")) {
+        E[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("F")) {
+        F[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("G")) {
+        G[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("H")) {
+        H[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("I")) {
+        I[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("J")) {
+        J[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("K")) {
+        K[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else if (row.equals("L")) {
+        L[column] = TEXT_BLACK + "+" + TEXT_RESET;
+      } else {
+        o.msgR("[ERROR]");
       }
     }
 
-    // Display hits
+    // Display hit or miss
+    if (hit == false) {
+      o.msgY("MISS!\n");
+    } else {
+      o.msgY(".⁎˚⭒✷💥 HIT! 💥✷࿏˚*.\n");
+      ++hits;
+    }
+
     o.msgB("Hits: " + TEXT_RESET + hits + "\n");
     return hits;
-    
   }
 
   // Game board
@@ -354,13 +285,14 @@ class Board {
   public String[] K = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
   public String[] L = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
   
-  
+  // Ship one
 	public String shipRow;
     
 	public int columnOneShipOne;
 	public int columnTwoShipOne;
 	public int columnThreeShipOne;
 
+  // Ship two
   public String shipTwoRow;
 
   public int columnOneShipTwo;

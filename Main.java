@@ -2,14 +2,15 @@ import java.util.*;
 
 public class Main {
 	public static void main(String[] args) {   
-    // Messages
     Out o = new Out();
+    Board b = new Board();
+    
+    //public static final String TEXT_RESET = "\u001B[0m";{}
+    
 		o.msgB("Welcome to Battleship!\n");
 		o.msgB("Try to hit my two ships within 20 guesses.\n\n");
 
-    Board b = new Board();
-
-    // GENERATE ROWS
+    // Generate rows
     Random randNum1 = new Random();
     Set<Integer> rowSet = new LinkedHashSet<Integer>();
     while (rowSet.size() < 2) { // amount of generated numbers
@@ -18,7 +19,7 @@ public class Main {
     Integer[] rowSetArray = new Integer[rowSet.size()];
     rowSetArray = rowSet.toArray(rowSetArray);
 
-    // GENERATE COLUMNS
+    // Generate columns
     Random randNum2 = new Random();
     Set<Integer> colSet = new LinkedHashSet<Integer>();
     while (colSet.size() < 2) { // amount of generated numbers
@@ -27,28 +28,24 @@ public class Main {
     Integer[] colSetArray = new Integer[colSet.size()];
     colSetArray = colSet.toArray(colSetArray);
 
-    // PLACE SHIPS
+    // Place ships
     b.placeShipOne(1, rowSetArray[0], colSetArray[0], colSetArray[0] + 1, colSetArray[0] + 2);
     b.placeShipTwo(2, rowSetArray[1], colSetArray[1], colSetArray[1] + 1, colSetArray[1] + 2, colSetArray[1] + 3, colSetArray[1] + 4);
 
-    // Display Ship Positions
+    // Display ship positions
     b.showShips(true); // change to 'true' to get ship coordinates
 
-    // Handle Game
+    // Handle game
     boolean win = false;
-    int hits = 0; // hits still not counted
 		int guesses = 20;
     
-		while (hits < 10) { 
+		while (true) { 
 			b.showBoard();
-			b.handleUserGuess();
-			b.checkWinStatus();
+			int hits = b.handleUserGuess();
 
-      // Handle guesses
       --guesses;
       o.msgW("Guesses: " + guesses + "\n");
 
-      // End game
       if (guesses == 0) {
         break;
       } 
@@ -65,7 +62,6 @@ public class Main {
 			o.msgY("\n\n\nOhhh yeaaahhhhh!!!!\n");
 			o.msgY("You had a good run! Sorta.. Well, you can always try again..");
 		}
-    
     
 	}
 }
