@@ -5,8 +5,6 @@ public class Main {
     Out o = new Out();
     Board b = new Board();
     
-    //public static final String TEXT_RESET = "\u001B[0m";{}
-    
 		o.msgB("Welcome to Battleship!\n");
 		o.msgB("Try to hit my two ships within 20 guesses.\n\n");
 
@@ -33,7 +31,7 @@ public class Main {
     b.placeShipTwo(2, rowSetArray[1], colSetArray[1], colSetArray[1] + 1, colSetArray[1] + 2, colSetArray[1] + 3, colSetArray[1] + 4);
 
     // Display ship positions
-    b.showShips(true); // change to 'true' to get ship coordinates
+    b.showShips(false); // change to 'true' to get ship coordinates
 
     // Handle game
     boolean win = false;
