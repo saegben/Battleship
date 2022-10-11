@@ -1,17 +1,10 @@
 import java.util.*;
 
 class Board {
-  Out o;
-  RowInput RInfo;
-  ColumnInput CInfo;
+  Out o = new Out();
+  UserHandling u = new UserHandling();
 
-	public Board () {
-		o = new Out();
-    RInfo = new RowInput();
-    CInfo = new ColumnInput();
-	}
-
-  // Text Colors
+  // Text colors
   public static final String TEXT_RESET = "\u001B[0m";{}
   public static final String TEXT_BLACK = "\u001B[30m";{}
   public static final String TEXT_GREEN = "\u001B[32m";{}
@@ -152,16 +145,12 @@ class Board {
     boolean validGuess = false;
     
     // Row
-    o.msgB("Which Row? (A/B/C/D/E/F/G/H/I/J/K/L)\n");
-    RowInput RInfo = new RowInput();
-    RInfo.promptRowInput();
-    String row = RInfo.getRowInput();
+    u.promptRowInput();
+    String row = u.getRowInput();
     
     // Column
-    o.msgB("Which Column? (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15)\n");
-    ColumnInput CInfo = new ColumnInput();
-    CInfo.promptColumnInput();
-    int column = CInfo.getColumnInput();
+    u.promptColumnInput();
+    int column = u.getColumnInput();
 
     String userInput = row + column;
     o.msgB("\n\n You entered: " + TEXT_RESET + userInput + "\n");
