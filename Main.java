@@ -6,36 +6,15 @@ public class Main {
     Board b = new Board();
     
 		o.msgB("Welcome to Battleship!\n");
-		o.msgB("Try to hit my two ships within 20 guesses.\n\n");
+		o.msgB("Try to hit my three ships within 30 guesses.\n\n");
 
-    // Generate rows
-    Random randNum1 = new Random();
-    Set<Integer> rowSet = new LinkedHashSet<Integer>();
-    while (rowSet.size() < 2) { // amount of generated numbers
-      rowSet.add(randNum1.nextInt(12)); // row range: 0 - 11
-    }
-    Integer[] rowSetArray = new Integer[rowSet.size()];
-    rowSetArray = rowSet.toArray(rowSetArray);
+    b.createShips();
 
-    // Generate columns
-    Random randNum2 = new Random();
-    Set<Integer> colSet = new LinkedHashSet<Integer>();
-    while (colSet.size() < 2) { // amount of generated numbers
-      colSet.add(randNum2.nextInt(11) + 1); // column range: 1 - 11
-    }
-    Integer[] colSetArray = new Integer[colSet.size()];
-    colSetArray = colSet.toArray(colSetArray);
-
-    // Place ships
-    b.placeShipOne(1, rowSetArray[0], colSetArray[0], colSetArray[0] + 1, colSetArray[0] + 2);
-    b.placeShipTwo(2, rowSetArray[1], colSetArray[1], colSetArray[1] + 1, colSetArray[1] + 2, colSetArray[1] + 3, colSetArray[1] + 4);
-
-    // Display ship positions
     b.showShips(false); // change to 'true' to get ship coordinates
 
     // Handle game
     boolean win = false;
-		int guesses = 20;
+		int guesses = 30;
     
 		while (true) { 
 			b.showBoard();
@@ -47,18 +26,24 @@ public class Main {
       if (guesses == 0) {
         break;
       } 
-      if (hits == 8) {
+      if (hits == 11) {
         win = true;
         break;
       }
 		}
 
     if (win == true) {
-      o.msgG("\n\n\nYou sunk my ships!!!!\n");
-			o.msgG("Thanks for playing!!!!");
+      b.showBoard();
+      o.msgG("\n\n───────────────────────────────────────────────");
+      o.msgG("\n              You sunk my ships!!!");
+			o.msgG("\n             Thanks for playing!!!!");
+      o.msgG("\n───────────────────────────────────────────────");
 		} else {
-			o.msgY("\n\n\nOhhh yeaaahhhhh!!!!\n");
-			o.msgY("You had a good run! Sorta.. Well, you can always try again..");
+      b.showBoard();
+      o.msgY("\n\n───────────────────────────────────────────────");
+			o.msgY("\n                   GAME OVER");
+			o.msgY("\n             Thanks for playing!!!!");
+      o.msgY("\n───────────────────────────────────────────────");
 		}
     
 	}
