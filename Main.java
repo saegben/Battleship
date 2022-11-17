@@ -5,13 +5,14 @@ public class Main {
     Out o = new Out();
     Board b = new Board();
     UserHandling u = new UserHandling();
-    
+
+    // Intro
 		o.msgBlu("\nWelcome to Battleship!\n");
 		o.msgCya("Try to hit my three ships within 30 guesses.\n\n");
 
     // Setup
     b.createShips();
-    b.showShips(false); // change to 'true' to get ship coordinates
+    b.showShips(true); // change to 'true' to get ship coordinates
     u.handleLogs();
 
     // Handle game
