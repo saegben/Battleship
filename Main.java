@@ -12,7 +12,7 @@ public class Main {
 
     // Setup
     b.createShips();
-    b.showShips(true); // change to 'true' to get ship coordinates
+    b.showShips(false); // change to 'true' to get ship coordinates
     u.handleLogs();
 
     // Handle game
