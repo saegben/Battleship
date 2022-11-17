@@ -62,8 +62,15 @@ class UserHandling {
     while (true) {
       try {
         // Get input
-        o.msgSky("Which Row? (A/B/C/D/E/F/G/H/I/J/K/L)\n");
-        row = getInput.nextLine().substring(0, 1);
+        o.msgSky("Which Row? (A/B/C/D/E/F/G/H/I/J/K/L)  ");
+        o.msgRed("[Type "); o.msgPin("QUIT"); o.msgRed(" to end the game.]\n");
+        row = getInput.nextLine();
+        if (row.equals("QUIT")) {
+          o.msgRed("Terminating game...\n");
+          System.exit(0);
+        } else {
+          row = row.substring(0, 1);
+        }
         if (row.matches("[a-zA-Z]")) { row = row.toUpperCase(); }
         // Check for match
         if (row.matches("[a-lA-L]")) {
