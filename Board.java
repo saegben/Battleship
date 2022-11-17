@@ -4,11 +4,10 @@ class Board {
   Out o = new Out();
   UserHandling u = new UserHandling();
 
-  // Text Colors
+  // Text colors
   public static final String TEXT_RESET = "\u001B[0m";{}
   public static final String TEXT_BLACK = "\u001B[30m";{}
   public static final String TEXT_GREEN = "\u001B[32m";{}
-  public static final String TEXT_YELLOW = "\u001B[93m";{}
 
   // Create ship pieces
   public void createShips() {
@@ -148,219 +147,220 @@ class Board {
     if (userInput.equals(s1p1) || userInput.equals(s1p2) || userInput.equals(s1p3)) {
       hit = true;
       if (row.equals("A")) {
-        A[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        A[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("B")) {
-        B[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        B[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("C")) {
-        C[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        C[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("D")) {
-        D[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        D[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("E")) {
-        E[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        E[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("F")) {
-        F[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        F[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("G")) {
-        G[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        G[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("H")) {
-        H[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        H[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("I")) {
-        I[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        I[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("J")) {
-        J[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        J[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("K")) {
-        K[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        K[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("L")) {
-        L[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        L[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else {
-        o.msgR("[ERROR]");
+        o.msgErr();
       }
     }
     // Check for ship two
     else if (userInput.equals(s2p1) || userInput.equals(s2p2) || userInput.equals(s2p3) || userInput.equals(s2p4) || userInput.equals(s2p5)) {
       hit = true;
       if (row.equals("A")) {
-        A[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        A[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("B")) {
-        B[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        B[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("C")) {
-        C[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        C[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("D")) {
-        D[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        D[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("E")) {
-        E[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        E[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("F")) {
-        F[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        F[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("G")) {
-        G[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        G[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("H")) {
-        H[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        H[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("I")) {
-        I[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        I[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("J")) {
-        J[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        J[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("K")) {
-        K[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        K[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("L")) {
-        L[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        L[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else {
-        o.msgR("[ERROR]");
+        o.msgErr();
       }
     }
     // Check for ship three
     else if (userInput.equals(s3p1) || userInput.equals(s3p2) || userInput.equals(s3p3)) {
       hit = true;
       if (row.equals("A")) {
-        A[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        A[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("B")) {
-        B[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        B[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("C")) {
-        C[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        C[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("D")) {
-        D[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        D[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("E")) {
-        E[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        E[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("F")) {
-        F[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        F[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("G")) {
-        G[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        G[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("H")) {
-        H[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        H[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("I")) {
-        I[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        I[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("J")) {
-        J[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        J[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("K")) {
-        K[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        K[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else if (row.equals("L")) {
-        L[column] = TEXT_GREEN + "X" + TEXT_RESET;
+        L[column] = TEXT_GREEN + "✘" + TEXT_RESET;
       } else {
-        o.msgR("[ERROR]");
+        o.msgErr();
       }
     }
     // If all ships were missed
     else {
       if (row.equals("A")) {
-        A[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        A[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("B")) {
-        B[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        B[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("C")) {
-        C[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        C[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("D")) {
-        D[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        D[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("E")) {
-        E[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        E[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("F")) {
-        F[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        F[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("G")) {
-        G[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        G[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("H")) {
-        H[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        H[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("I")) {
-        I[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        I[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("J")) {
-        J[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        J[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("K")) {
-        K[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        K[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else if (row.equals("L")) {
-        L[column] = TEXT_BLACK + "+" + TEXT_RESET;
+        L[column] = TEXT_BLACK + "◌" + TEXT_RESET;
       } else {
-        o.msgR("[ERROR]");
+        o.msgErr();
       }
     }
 
     // Display hit or miss
     if (hit == false) {
-      o.msgY("MISS!\n");
+      o.msgYel("    ࿏ MISS! ࿏\n");
     } else {
-      o.msgY(".⁎˚⭒✷💥 HIT! 💥✷࿏˚*.\n");
+      o.msgLim(" .⁎˚⭒✷💥 HIT! 💥✷࿏˚*.\n");
       ++hits;
     }
 
-    o.msgB("Hits: " + TEXT_RESET + hits + "\n");
+    o.msgCya("\nHits: " + TEXT_RESET + hits + "\n");
     return hits;
   }
 
   // Game board
 	public void showBoard () {
-		o.msgW("\n\t\t\t _____GAME BOARD_____\n");
-		o.msgW("   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15\n");
-    o.msgY("   ───────────────────────────────────────────\n");
+    o.msgYel("┍─────────────────  "); o.msgCya("GAME BOARD"); o.msgYel("  ──────────────────┑\n");
+		o.msgYel("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgYel(" │\n");
+    o.msgYel("│   ┍─────────────────────────────────────────────┥\n");
 		
-		o.msgW("A" + TEXT_YELLOW + "│ " + TEXT_RESET);
+    o.msgYel("│ "); o.msgWhi("A"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(A[idx]);
-			o.msgW("  ");
-		}
-		o.msgW("\nB" + TEXT_YELLOW + "│ " + TEXT_RESET);
+			o.msgWhi(A[idx]);
+			o.msgWhi("  ");
+		}    
+		o.msgYel("\n│ "); o.msgWhi("B"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(B[idx]);
-			o.msgW("  ");
+			o.msgWhi(B[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nC" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("C"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(C[idx]);
-			o.msgW("  ");
+			o.msgWhi(C[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nD" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("D"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(D[idx]);
-			o.msgW("  ");
+			o.msgWhi(D[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nE" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("E"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(E[idx]);
-			o.msgW("  ");
+			o.msgWhi(E[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nF" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("F"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(F[idx]);
-			o.msgW("  ");
+			o.msgWhi(F[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nG" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("G"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(G[idx]);
-			o.msgW("  ");
+			o.msgWhi(G[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nH" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("H"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(H[idx]);
-			o.msgW("  ");
+			o.msgWhi(H[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nI" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("I"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(I[idx]);
-			o.msgW("  ");
+			o.msgWhi(I[idx]);
+			o.msgWhi("  ");
 		}
-		o.msgW("\nJ" + TEXT_YELLOW + "│ " + TEXT_RESET);
+		o.msgYel("\n│ "); o.msgWhi("J"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(J[idx]);
-			o.msgW("  ");
+			o.msgWhi(J[idx]);
+			o.msgWhi("  ");
 		}
-    o.msgW("\nK" + TEXT_YELLOW + "│ " + TEXT_RESET);
+    o.msgYel("\n│ "); o.msgWhi("K"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(K[idx]);
-			o.msgW("  ");
+			o.msgWhi(K[idx]);
+			o.msgWhi("  ");
 		}
-    o.msgW("\nL" + TEXT_YELLOW + "│ " + TEXT_RESET);
+    o.msgYel("\n│ "); o.msgWhi("L"); o.msgYel(" │ ");
 		for (int idx = 1; idx < 16; ++idx) {
-			o.msgW(L[idx]);
-		  o.msgW("  ");
+			o.msgWhi(L[idx]);
+		  o.msgWhi("  ");
 		}
-		o.msgW("\n");
+    o.msgYel("\n│   ┕─────────────────────────────────────────────┥");
+    o.msgYel("\n┕─────────────────────────────────────────────────┙\n");
 	}
   
-  public String[] A = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] B = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] C = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] D = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] E = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] F = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] G = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] H = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] I = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-	public String[] J = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-  public String[] K = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
-  public String[] L = {"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O"};
+  public String[] A = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] B = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] C = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] D = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] E = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] F = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] G = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] H = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] I = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+	public String[] J = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+  public String[] K = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
+  public String[] L = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
   
   // Ship one
   public String s1p1;
@@ -379,20 +379,23 @@ class Board {
   public String s3p2;
   public String s3p3;
 
-  // Show Ship Pieces
+  // Show ship locations
   public void showShips(boolean toggled) {
     if (toggled) {
-      o.msgY("\nShip 1 position: \n");
-      o.msgY(s1p1 + ", " + s1p2 + ", " + s1p3);
-
-      o.msgY("\nShip 2 position: \n");
-      o.msgY(s2p1 + ", " + s2p2 + ", " + s2p3 + ", " + s2p4 + ", " + s2p5);
-
-      o.msgY("\nShip 3 position: \n");
-      o.msgY(s3p1 + ", " + s3p2 + ", " + s3p3);
-
-      o.msgY("\n");
+      o.msgPur("  ┍─────────────────────────────────────────────┑\n");
+      o.msgPur("  │"); o.msgYel(" SHIP COORDINATES                            "); o.msgPur("│\n");
+      o.msgPur("  ┝─────────────────────────────────────────────┥\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │"); o.msgYel("    ☐ ☐ ☐"); o.msgMag("       [" + s1p1 + "] [" + s1p2 + "] [" + s1p3 + "]\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │"); o.msgYel("  ☐ ☐ ☐ ☐ ☐"); o.msgMag("     [" + s2p1 + "] [" + s2p2 + "] [" + s2p3 + "] [" + s2p4 + "] [" + s2p5 + "]\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │"); o.msgYel("      ☐\n");
+      o.msgPur("  │"); o.msgYel("      ☐"); o.msgMag("         [" + s3p1 + "] [" + s3p2 + "] [" + s3p3 + "]\n");
+      o.msgPur("  │"); o.msgYel("      ☐\n");
+      o.msgPur("  ┕─────────────────────────────────────────────┙\n\n");
     }
   }
-  
+
 }
