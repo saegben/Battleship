@@ -6,12 +6,12 @@ public class Main {
     Board b = new Board();
     UserHandling u = new UserHandling();
     
-		o.msgB("Welcome to Battleship!\n");
-		o.msgB("Try to hit my three ships within 30 guesses.\n\n");
+		o.msgBlu("\nWelcome to Battleship!\n");
+		o.msgCya("Try to hit my three ships within 30 guesses.\n\n");
 
     // Setup
     b.createShips();
-    b.showShips(true); // change to 'true' to get ship coordinates
+    b.showShips(false); // change to 'true' to get ship coordinates
     u.handleLogs();
 
     // Handle game
@@ -19,6 +19,7 @@ public class Main {
 		int guesses = 30;
     
 		while (true) { 
+      // Display
       u.handleGuesses(guesses);
 			b.showBoard();
 
@@ -31,6 +32,7 @@ public class Main {
         }
       }
 
+      // Check win status
 			int hits = b.handleMove(u.getRowInput(), u.getColumnInput());
 
       if (hits == 11) {
@@ -45,16 +47,16 @@ public class Main {
 
     if (win == true) {
       b.showBoard();
-      o.msgG("\n\n───────────────────────────────────────────────");
-      o.msgG("\n              You sunk my ships!!!");
-			o.msgG("\n             Thanks for playing!!!!");
-      o.msgG("\n───────────────────────────────────────────────");
+      o.msgGre("\n\n───────────────────────────────────────────────");
+      o.msgLim("\n              You sunk my ships!!!");
+			o.msgLim("\n             Thanks for playing!!!!");
+      o.msgGre("\n───────────────────────────────────────────────");
 		} else {
       b.showBoard();
-      o.msgY("\n\n───────────────────────────────────────────────");
-			o.msgY("\n                   GAME OVER");
-			o.msgY("\n             Thanks for playing!!!!");
-      o.msgY("\n───────────────────────────────────────────────");
+      o.msgPur("\n\n───────────────────────────────────────────────");
+			o.msgMag("\n                   GAME OVER");
+			o.msgMag("\n             Thanks for playing!!!!");
+      o.msgPur("\n───────────────────────────────────────────────");
 		}
     
 	}
