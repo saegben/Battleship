@@ -5,7 +5,6 @@ class Board {
   UserHandling u = new UserHandling();
 
   // Text colors
-  public static final String TEXT_RESET = "\u001B[0m";{}
   public static final String TEXT_BLACK = "\u001B[30m";{}
   public static final String TEXT_GREEN = "\u001B[32m";{}
 
@@ -17,14 +16,14 @@ class Board {
     do {
       // For horizontal ships
       Set<Integer> rowSet = new LinkedHashSet<Integer>();
-      while (rowSet.size() < 2) { // amount of generated numbers
+      while (rowSet.size() < 2) {
         rowSet.add(randNum.nextInt(12)); // row range: 0 - 11
       }
       Integer[] rowSetArray = new Integer[rowSet.size()];
       rowSetArray = rowSet.toArray(rowSetArray);
   
       Set<Integer> colSet = new LinkedHashSet<Integer>();
-      while (colSet.size() < 2) { // amount of generated numbers
+      while (colSet.size() < 2) {
         colSet.add(randNum.nextInt(11) + 1); // column range: 1 - 11
       }
       Integer[] colSetArray = new Integer[colSet.size()];
@@ -70,14 +69,14 @@ class Board {
       
       // For vertical ships
       Set<Integer> VrowSet = new LinkedHashSet<Integer>();
-      while (VrowSet.size() < 1) { // amount of generated numbers
+      while (VrowSet.size() < 1) {
         VrowSet.add(randNum.nextInt(9)); // row range: 0 - 9
       }
       Integer[] VrowSetArray = new Integer[VrowSet.size()];
       VrowSetArray = VrowSet.toArray(VrowSetArray);
   
       Set<Integer> VcolSet = new LinkedHashSet<Integer>();
-      while (VcolSet.size() < 1) { // amount of generated numbers
+      while (VcolSet.size() < 1) {
         VcolSet.add(randNum.nextInt(15) + 1); // column range: 1 - 15
       }
       Integer[] VcolSetArray = new Integer[VcolSet.size()];
@@ -143,128 +142,39 @@ class Board {
 		boolean hit = false;
     String userInput = row + column;
 
-    // Check for ship one
-    if (userInput.equals(s1p1) || userInput.equals(s1p2) || userInput.equals(s1p3)) {
+    // Check for ships
+    if (userInput.equals(s1p1) || userInput.equals(s1p2) || userInput.equals(s1p3) ||
+        userInput.equals(s2p1) || userInput.equals(s2p2) || userInput.equals(s2p3) || userInput.equals(s2p4) || userInput.equals(s2p5) ||
+        userInput.equals(s3p1) || userInput.equals(s3p2) || userInput.equals(s3p3)
+    ) {
       hit = true;
-      if (row.equals("A")) {
-        A[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("B")) {
-        B[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("C")) {
-        C[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("D")) {
-        D[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("E")) {
-        E[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("F")) {
-        F[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("G")) {
-        G[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("H")) {
-        H[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("I")) {
-        I[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("J")) {
-        J[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("K")) {
-        K[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("L")) {
-        L[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else {
-        o.msgErr();
-      }
-    }
-    // Check for ship two
-    else if (userInput.equals(s2p1) || userInput.equals(s2p2) || userInput.equals(s2p3) || userInput.equals(s2p4) || userInput.equals(s2p5)) {
-      hit = true;
-      if (row.equals("A")) {
-        A[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("B")) {
-        B[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("C")) {
-        C[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("D")) {
-        D[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("E")) {
-        E[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("F")) {
-        F[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("G")) {
-        G[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("H")) {
-        H[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("I")) {
-        I[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("J")) {
-        J[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("K")) {
-        K[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("L")) {
-        L[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else {
-        o.msgErr();
-      }
-    }
-    // Check for ship three
-    else if (userInput.equals(s3p1) || userInput.equals(s3p2) || userInput.equals(s3p3)) {
-      hit = true;
-      if (row.equals("A")) {
-        A[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("B")) {
-        B[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("C")) {
-        C[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("D")) {
-        D[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("E")) {
-        E[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("F")) {
-        F[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("G")) {
-        G[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("H")) {
-        H[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("I")) {
-        I[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("J")) {
-        J[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("K")) {
-        K[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else if (row.equals("L")) {
-        L[column] = TEXT_GREEN + "✘" + TEXT_RESET;
-      } else {
-        o.msgErr();
-      }
-    }
-    // If all ships were missed
-    else {
-      if (row.equals("A")) {
-        A[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("B")) {
-        B[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("C")) {
-        C[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("D")) {
-        D[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("E")) {
-        E[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("F")) {
-        F[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("G")) {
-        G[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("H")) {
-        H[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("I")) {
-        I[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("J")) {
-        J[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("K")) {
-        K[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else if (row.equals("L")) {
-        L[column] = TEXT_BLACK + "◌" + TEXT_RESET;
-      } else {
-        o.msgErr();
-      }
+      if (row.equals("A")) { A[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("B")) { B[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("C")) { C[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("D")) { D[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("E")) { E[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("F")) { F[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("G")) { G[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("H")) { H[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("I")) { I[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("J")) { J[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("K")) { K[column] = TEXT_GREEN + "✘";
+      } else if (row.equals("L")) { L[column] = TEXT_GREEN + "✘";
+      } else { o.msgErr(); }
+    } else {
+      if (row.equals("A")) { A[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("B")) { B[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("C")) { C[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("D")) { D[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("E")) { E[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("F")) { F[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("G")) { G[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("H")) { H[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("I")) { I[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("J")) { J[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("K")) { K[column] = TEXT_BLACK + "◌";
+      } else if (row.equals("L")) { L[column] = TEXT_BLACK + "◌";
+      } else { o.msgErr(); }
     }
 
     // Display hit or miss
@@ -275,7 +185,7 @@ class Board {
       ++hits;
     }
 
-    o.msgCya("\nHits: " + TEXT_RESET + hits + "\n");
+    o.msgCya("\nHits: "); o.msgWhi(hits + "\n");
     return hits;
   }
 
@@ -286,65 +196,30 @@ class Board {
     o.msgYel("│   ┍─────────────────────────────────────────────┥\n");
 		
     o.msgYel("│ "); o.msgWhi("A"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(A[idx]);
-			o.msgWhi("  ");
-		}    
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(A[idx] + "  "); }    
 		o.msgYel("\n│ "); o.msgWhi("B"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(B[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(B[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("C"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(C[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(C[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("D"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(D[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(D[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("E"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(E[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(E[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("F"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(F[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(F[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("G"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(G[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(G[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("H"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(H[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(H[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("I"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(I[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(I[idx] + "  "); }
 		o.msgYel("\n│ "); o.msgWhi("J"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(J[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(J[idx] + "  "); }
     o.msgYel("\n│ "); o.msgWhi("K"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(K[idx]);
-			o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(K[idx] + "  "); }
     o.msgYel("\n│ "); o.msgWhi("L"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) {
-			o.msgWhi(L[idx]);
-		  o.msgWhi("  ");
-		}
+		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(L[idx] + "  "); }
+    
     o.msgYel("\n│   ┕─────────────────────────────────────────────┥");
     o.msgYel("\n┕─────────────────────────────────────────────────┙\n");
 	}
@@ -362,24 +237,21 @@ class Board {
   public String[] K = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
   public String[] L = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
   
-  // Ship one
   public String s1p1;
   public String s1p2;
   public String s1p3;
 
-  // Ship two
   public String s2p1;
   public String s2p2;
   public String s2p3;
   public String s2p4;
   public String s2p5;
 
-  // Ship three
   public String s3p1;
   public String s3p2;
   public String s3p3;
 
-  // Show ship locations
+  // Show Ship Pieces
   public void showShips(boolean toggled) {
     if (toggled) {
       o.msgPur("  ┍─────────────────────────────────────────────┑\n");
