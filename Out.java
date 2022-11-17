@@ -18,13 +18,18 @@ class Out {
   public void msgG (String g) {
     System.out.print(TEXT_RESET + TEXT_GREEN + g + TEXT_RESET);
   }
+  public void msgM (String m) {
+    System.out.print(TEXT_RESET + TEXT_MAGENTA + m + TEXT_RESET);
+  }
   
   // Text colors
   public static final String TEXT_RESET = "\u001B[0m";{}
-  public static final String TEXT_WHITE = "\u001B[37m";{}
+
   public static final String TEXT_BLACK = "\u001B[30m";{}
-  public static final String TEXT_BLUE = "\u001B[34m";{}
   public static final String TEXT_RED = "\u001B[31m";{}
-  public static final String TEXT_YELLOW = "\u001B[93m";{}
   public static final String TEXT_GREEN = "\u001B[32m";{}
+  public static final String TEXT_YELLOW = "\u001B[93m";{}
+  public static final String TEXT_BLUE = "\u001B[34m";{}
+  public static final String TEXT_MAGENTA = "\u001B[35m";{}
+  public static final String TEXT_WHITE = "\u001B[37m";{}
 }
