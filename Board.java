@@ -4,7 +4,7 @@ class Board {
   Out o = new Out();
   UserHandling u = new UserHandling();
 
-  // Text colors
+  // Text Colors
   public static final String TEXT_RESET = "\u001B[0m";{}
   public static final String TEXT_BLACK = "\u001B[30m";{}
   public static final String TEXT_GREEN = "\u001B[32m";{}
@@ -140,20 +140,9 @@ class Board {
 
   // Handle user input
   int hits = 0;
-	public int handleUserGuess() {    
+	public int handleMove(String row, int column) {    
 		boolean hit = false;
-    boolean validGuess = false;
-    
-    // Row
-    u.promptRowInput();
-    String row = u.getRowInput();
-    
-    // Column
-    u.promptColumnInput();
-    int column = u.getColumnInput();
-
     String userInput = row + column;
-    o.msgB("\n\n You entered: " + TEXT_RESET + userInput + "\n");
 
     // Check for ship one
     if (userInput.equals(s1p1) || userInput.equals(s1p2) || userInput.equals(s1p3)) {
@@ -401,6 +390,8 @@ class Board {
 
       o.msgY("\nShip 3 position: \n");
       o.msgY(s3p1 + ", " + s3p2 + ", " + s3p3);
+
+      o.msgY("\n");
     }
   }
   
