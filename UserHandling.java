@@ -4,15 +4,11 @@ import java.io.*;
 class UserHandling {
   Out o = new Out();
   Scanner getInput = new Scanner(System.in);
-  
-  // Text colors
-  public static final String TEXT_RESET = "\u001B[0m";{}
 
   // Create logs
   public void handleLogs() {
     try {
       File file = new File("Logs.txt");
-      
       // Clear logs & refresh
       if (file.exists() && file.isFile()) { file.delete(); }
       if (!file.createNewFile()) {
@@ -28,15 +24,13 @@ class UserHandling {
   // Check user input
   public boolean checkInput(String row, int column) {
     String newInput = row + column;
-    o.msgCya("\n\nYou entered: " + TEXT_RESET + newInput + "\n\n");
-
+    o.msgCya("\n\nYou entered: "); o.msgWhi(newInput + "\n\n");
     // Cross-check with logs
     try (BufferedReader br = new BufferedReader(new FileReader("Logs.txt"));
     FileWriter fw = new FileWriter("Logs.txt", true);
     BufferedWriter bw = new BufferedWriter(fw)) {
       boolean lineExists = false;
       String currentLine;
-
       // Check for logged match
       while ((currentLine = br.readLine()) != null) {
         if (currentLine.equals(newInput)) {
@@ -45,7 +39,6 @@ class UserHandling {
         }
       }
       br.close();
-
       // Log input if new
       if (!lineExists) {
         bw.write(newInput);
@@ -119,22 +112,22 @@ class UserHandling {
   
   // Handle guesses
   public int handleGuesses(int guesses) {
-    if (guesses >= 16) { // 30-16
-      o.msgBlu("Guesses: " + TEXT_RESET + guesses + "\n");
-
-    } else if (guesses >= 11) { // 15-11
-      o.msgPur("Guesses: " + TEXT_RESET + guesses + "\n");
-
-    } else if (guesses >= 6) { // 10-6
-      o.msgMag("Guesses: " + TEXT_RESET + guesses + "\n");
-
-    } else { // 5-0
-      o.msgRed("Guesses: " + TEXT_RESET + guesses + "\n");
-    }
-
-    // Warning
-    if (guesses == 5) {
-      o.msgYel("\nUh oh... You're running low on guesses... Choose your next moves wisely.\n\n");
+    // 30-16
+    if (guesses >= 16) { 
+      o.msgBlu("Guesses: "); o.msgWhi(guesses + "\n");
+    // 15-11
+    } else if (guesses >= 11) { 
+      o.msgPur("Guesses: "); o.msgWhi(guesses + "\n");
+    // 10-6
+    } else if (guesses >= 6) { 
+      o.msgMag("Guesses: "); o.msgWhi(guesses + "\n");
+    // 5
+    } else if (guesses == 5) {
+      o.msgRed("Guesses: "); o.msgWhi(guesses + "\n");
+      o.msgYel("\nUh oh... You're running low on guesses... Choose your next move wisely.\n");
+    // 4-0
+    } else { 
+      o.msgRed("Guesses: "); o.msgWhi(guesses + "\n");
     }
 
     return guesses;
