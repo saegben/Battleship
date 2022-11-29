@@ -131,7 +131,7 @@ class UserHandling {
     // 5
     } else if (guesses == 5) {
       o.msgRed("Guesses: "); o.msgWhi(guesses + "\n");
-      o.msgYel("\nUh oh... You're running low on guesses... Choose your next move wisely.\n");
+      o.msgYel("Uh oh... You're running low on guesses... Choose your next move wisely.\n");
     // 4-0
     } else { 
       o.msgRed("Guesses: "); o.msgWhi(guesses + "\n");

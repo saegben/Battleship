@@ -1,22 +1,21 @@
 class Out {
-
   // Preset messages
-  public void msgErr() { System.out.println(TEXT_RESET + RED + BLACK_BR + "\033[3m[ERROR] Something went wrong...\033[0m" + TEXT_RESET); }
-  public void msgInv (String msg) { System.out.println(TEXT_RESET + BLACK_BR + RED + "\033[3m[UH OH!] \033[0m" + BLACK_BR + PINK + msg + TEXT_RESET); }
+  public void msgErr() { System.out.println(RED + "\033[3m[ERROR] Something went wrong...\033[0m" + RESET); }
+  public void msgInv (String msg) { System.out.println(RED + "\033[3m[UH OH!] \033[0m" + PINK + msg + RESET); }
 
   // Text colors
-  public void msgBla (String msg) { System.out.print(TEXT_RESET + BLACK + msg + TEXT_RESET); }
-  public void msgRed (String msg) { System.out.print(TEXT_RESET + RED + msg + TEXT_RESET); }
-  public void msgGre (String msg) { System.out.print(TEXT_RESET + GREEN + msg + TEXT_RESET); }
-  public void msgBlu (String msg) { System.out.print(TEXT_RESET + BLUE + msg + TEXT_RESET); }
-  public void msgPur (String msg) { System.out.print(TEXT_RESET + PURPLE + msg + TEXT_RESET); }
-  public void msgWhi (String msg) { System.out.print(TEXT_RESET + WHITE + msg + TEXT_RESET); }
-  public void msgPin (String msg) { System.out.print(TEXT_RESET + PINK + msg + TEXT_RESET); }
-  public void msgLim (String msg) { System.out.print(TEXT_RESET + LIME + msg + TEXT_RESET); }
-  public void msgYel (String msg) { System.out.print(TEXT_RESET + YELLOW + msg + TEXT_RESET); }
-  public void msgSky (String msg) { System.out.print(TEXT_RESET + SKY + msg + TEXT_RESET); }
-  public void msgMag (String msg) { System.out.print(TEXT_RESET + MAGENTA + msg + TEXT_RESET); }
-  public void msgCya (String msg) { System.out.print(TEXT_RESET + CYAN + msg + TEXT_RESET); }
+  public void msgBla (String msg) { System.out.print(BLACK + msg + RESET); }
+  public void msgRed (String msg) { System.out.print(RED + msg + RESET); }
+  public void msgGre (String msg) { System.out.print(GREEN + msg + RESET); }
+  public void msgBlu (String msg) { System.out.print(BLUE + msg + RESET); }
+  public void msgPur (String msg) { System.out.print(PURPLE + msg + RESET); }
+  public void msgWhi (String msg) { System.out.print(WHITE + msg + RESET); }
+  public void msgPin (String msg) { System.out.print(PINK + msg + RESET); }
+  public void msgLim (String msg) { System.out.print(LIME + msg + RESET); }
+  public void msgYel (String msg) { System.out.print(YELLOW + msg + RESET); }
+  public void msgSky (String msg) { System.out.print(SKY + msg + RESET); }
+  public void msgMag (String msg) { System.out.print(MAGENTA + msg + RESET); }
+  public void msgCya (String msg) { System.out.print(CYAN + msg + RESET); }
 
   public static final String BLACK = "\u001B[30m";{}
   public static final String RED = "\u001B[31m";{}
@@ -30,8 +29,7 @@ class Out {
   public static final String SKY = "\u001B[94m";{}
   public static final String MAGENTA = "\u001B[95m";{}
   public static final String CYAN = "\u001B[96m";{}
-  public static final String BLACK_BR = "\u001B[100m";{}
   
   // Text reset
-  public static final String TEXT_RESET = "\u001B[0m";{}
+  public static final String RESET = "\u001B[0m";{}
 }

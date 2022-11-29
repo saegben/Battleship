@@ -5,8 +5,8 @@ class Board {
   UserHandling u = new UserHandling();
 
   // Text colors
-  public static final String TEXT_BLACK = "\u001B[30m";{}
-  public static final String TEXT_GREEN = "\u001B[32m";{}
+  public static final String TXT_BLACK = "\u001B[30m";{}
+  public static final String TXT_GREEN = "\u001B[32m";{}
 
   // Create ship pieces
   public void createShips() {
@@ -148,32 +148,32 @@ class Board {
         userInput.equals(s3p1) || userInput.equals(s3p2) || userInput.equals(s3p3)
     ) {
       hit = true;
-      if (row.equals("A")) { A[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("B")) { B[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("C")) { C[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("D")) { D[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("E")) { E[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("F")) { F[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("G")) { G[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("H")) { H[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("I")) { I[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("J")) { J[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("K")) { K[column] = TEXT_GREEN + "✘";
-      } else if (row.equals("L")) { L[column] = TEXT_GREEN + "✘";
+      if (row.equals("A")) { A[column] = TXT_GREEN + "✘";
+      } else if (row.equals("B")) { B[column] = TXT_GREEN + "✘";
+      } else if (row.equals("C")) { C[column] = TXT_GREEN + "✘";
+      } else if (row.equals("D")) { D[column] = TXT_GREEN + "✘";
+      } else if (row.equals("E")) { E[column] = TXT_GREEN + "✘";
+      } else if (row.equals("F")) { F[column] = TXT_GREEN + "✘";
+      } else if (row.equals("G")) { G[column] = TXT_GREEN + "✘";
+      } else if (row.equals("H")) { H[column] = TXT_GREEN + "✘";
+      } else if (row.equals("I")) { I[column] = TXT_GREEN + "✘";
+      } else if (row.equals("J")) { J[column] = TXT_GREEN + "✘";
+      } else if (row.equals("K")) { K[column] = TXT_GREEN + "✘";
+      } else if (row.equals("L")) { L[column] = TXT_GREEN + "✘";
       } else { o.msgErr(); }
     } else {
-      if (row.equals("A")) { A[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("B")) { B[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("C")) { C[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("D")) { D[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("E")) { E[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("F")) { F[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("G")) { G[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("H")) { H[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("I")) { I[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("J")) { J[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("K")) { K[column] = TEXT_BLACK + "◌";
-      } else if (row.equals("L")) { L[column] = TEXT_BLACK + "◌";
+      if (row.equals("A")) { A[column] = TXT_BLACK + "◌";
+      } else if (row.equals("B")) { B[column] = TXT_BLACK + "◌";
+      } else if (row.equals("C")) { C[column] = TXT_BLACK + "◌";
+      } else if (row.equals("D")) { D[column] = TXT_BLACK + "◌";
+      } else if (row.equals("E")) { E[column] = TXT_BLACK + "◌";
+      } else if (row.equals("F")) { F[column] = TXT_BLACK + "◌";
+      } else if (row.equals("G")) { G[column] = TXT_BLACK + "◌";
+      } else if (row.equals("H")) { H[column] = TXT_BLACK + "◌";
+      } else if (row.equals("I")) { I[column] = TXT_BLACK + "◌";
+      } else if (row.equals("J")) { J[column] = TXT_BLACK + "◌";
+      } else if (row.equals("K")) { K[column] = TXT_BLACK + "◌";
+      } else if (row.equals("L")) { L[column] = TXT_BLACK + "◌";
       } else { o.msgErr(); }
     }
 
