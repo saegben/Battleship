@@ -5,11 +5,13 @@ class UserHandling {
   Out o = new Out();
   Scanner getInput = new Scanner(System.in);
 
+  String row;
+  int column;
+
   // Create logs
   public void handleLogs() {
     try {
       File file = new File("Logs.txt");
-      // Clear logs & refresh
       if (file.exists() && file.isFile()) { file.delete(); }
       if (!file.createNewFile()) {
         o.msgErr();
@@ -25,7 +27,7 @@ class UserHandling {
   public boolean checkInput(String row, int column) {
     String newInput = row + column;
     o.msgCya("\n\nYou entered: "); o.msgWhi(newInput + "\n\n");
-    // Cross-check with logs
+
     try (BufferedReader br = new BufferedReader(new FileReader("Logs.txt"));
     FileWriter fw = new FileWriter("Logs.txt", true);
     BufferedWriter bw = new BufferedWriter(fw)) {
@@ -39,7 +41,7 @@ class UserHandling {
         }
       }
       br.close();
-      // Log input if new
+
       if (!lineExists) {
         bw.write(newInput);
         bw.newLine();
@@ -56,23 +58,21 @@ class UserHandling {
   }
   
   // Handle row input
-  String row;
-
   public String promptRowInput() {
     while (true) {
       try {
-        // Get input
         o.msgSky("Which Row? (A/B/C/D/E/F/G/H/I/J/K/L)  ");
-        o.msgRed("[Type "); o.msgPin("QUIT"); o.msgRed(" to end the game.]\n");
+        o.msgRed("[Type '"); o.msgPin("QUIT"); o.msgRed("' to end the game.]\n");
         row = getInput.nextLine();
+
         if (row.equals("QUIT")) {
           o.msgRed("Terminating game...\n");
           System.exit(0);
         } else {
           row = row.substring(0, 1);
         }
+
         if (row.matches("[a-zA-Z]")) { row = row.toUpperCase(); }
-        // Check for match
         if (row.matches("[a-lA-L]")) {
           return row;
         } else {
@@ -91,15 +91,12 @@ class UserHandling {
   }
   
   // Handle column input
-  int column;
-
   public int promptColumnInput() {
     while (true) {
       try {
-        // Get input
         o.msgSky("Which Column? (1/2/3/4/5/6/7/8/9/10/11/12/13/14/15)\n");
         column = Integer.parseInt(getInput.nextLine().trim());
-        // Check for match
+
         if (column >= 1 && column <= 15) {
           return column;
         } else {
@@ -119,20 +116,15 @@ class UserHandling {
   
   // Handle guesses
   public int handleGuesses(int guesses) {
-    // 30-16
     if (guesses >= 16) { 
       o.msgBlu("Guesses: "); o.msgWhi(guesses + "\n");
-    // 15-11
     } else if (guesses >= 11) { 
       o.msgPur("Guesses: "); o.msgWhi(guesses + "\n");
-    // 10-6
     } else if (guesses >= 6) { 
       o.msgMag("Guesses: "); o.msgWhi(guesses + "\n");
-    // 5
     } else if (guesses == 5) {
       o.msgRed("Guesses: "); o.msgWhi(guesses + "\n");
       o.msgYel("Uh oh... You're running low on guesses... Choose your next move wisely.\n");
-    // 4-0
     } else { 
       o.msgRed("Guesses: "); o.msgWhi(guesses + "\n");
     }

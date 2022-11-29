@@ -15,14 +15,14 @@ class Board {
     // Loop ship generation until unique placements
     do {
       // For horizontal ships
-      Set<Integer> rowSet = new LinkedHashSet<Integer>();
+      Set<Integer> rowSet = new LinkedHashSet<>();
       while (rowSet.size() < 2) {
         rowSet.add(randNum.nextInt(12)); // row range: 0 - 11
       }
       Integer[] rowSetArray = new Integer[rowSet.size()];
       rowSetArray = rowSet.toArray(rowSetArray);
   
-      Set<Integer> colSet = new LinkedHashSet<Integer>();
+      Set<Integer> colSet = new LinkedHashSet<>();
       while (colSet.size() < 2) {
         colSet.add(randNum.nextInt(11) + 1); // column range: 1 - 11
       }
@@ -68,14 +68,14 @@ class Board {
       s2p5 = ship2Row + (colSetArray[1] + 4);
       
       // For vertical ships
-      Set<Integer> VrowSet = new LinkedHashSet<Integer>();
+      Set<Integer> VrowSet = new LinkedHashSet<>();
       while (VrowSet.size() < 1) {
         VrowSet.add(randNum.nextInt(9)); // row range: 0 - 9
       }
       Integer[] VrowSetArray = new Integer[VrowSet.size()];
       VrowSetArray = VrowSet.toArray(VrowSetArray);
   
-      Set<Integer> VcolSet = new LinkedHashSet<Integer>();
+      Set<Integer> VcolSet = new LinkedHashSet<>();
       while (VcolSet.size() < 1) {
         VcolSet.add(randNum.nextInt(15) + 1); // column range: 1 - 15
       }
@@ -191,7 +191,7 @@ class Board {
 
   // Game board
 	public void showBoard () {
-    o.msgYel("┍─────────────────  "); o.msgCya("GAME BOARD"); o.msgYel("  ──────────────────┑\n");
+    o.msgYel("┍─────────────────  "); o.msgCya("GAME BOARD"); o.msgYel("  ──────────────────┑\n");
 		o.msgYel("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgYel(" │\n");
     o.msgYel("│   ┍─────────────────────────────────────────────┥\n");
 		
@@ -223,6 +223,25 @@ class Board {
     o.msgYel("\n│   ┕─────────────────────────────────────────────┥");
     o.msgYel("\n┕─────────────────────────────────────────────────┙\n");
 	}
+
+  // Show Ship Pieces
+  public void showShips(boolean toggled) {
+    if (toggled) {
+      o.msgPur("  ┍─────────────────────────────────────────────┑\n");
+      o.msgPur("  │"); o.msgYel(" SHIP COORDINATES                            "); o.msgPur("│\n");
+      o.msgPur("  ┝─────────────────────────────────────────────┥\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │"); o.msgYel("    ☐ ☐ ☐"); o.msgMag("       [" + s1p1 + "] [" + s1p2 + "] [" + s1p3 + "]\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │"); o.msgYel("  ☐ ☐ ☐ ☐ ☐"); o.msgMag("     [" + s2p1 + "] [" + s2p2 + "] [" + s2p3 + "] [" + s2p4 + "] [" + s2p5 + "]\n");
+      o.msgPur("  │\n");
+      o.msgPur("  │"); o.msgYel("      ☐\n");
+      o.msgPur("  │"); o.msgYel("      ☐"); o.msgMag("         [" + s3p1 + "] [" + s3p2 + "] [" + s3p3 + "]\n");
+      o.msgPur("  │"); o.msgYel("      ☐\n");
+      o.msgPur("  ┕─────────────────────────────────────────────┙\n\n");
+    }
+  }
   
   public String[] A = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
 	public String[] B = {"∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘","∘"};
@@ -250,24 +269,5 @@ class Board {
   public String s3p1;
   public String s3p2;
   public String s3p3;
-
-  // Show Ship Pieces
-  public void showShips(boolean toggled) {
-    if (toggled) {
-      o.msgPur("  ┍─────────────────────────────────────────────┑\n");
-      o.msgPur("  │"); o.msgYel(" SHIP COORDINATES                            "); o.msgPur("│\n");
-      o.msgPur("  ┝─────────────────────────────────────────────┥\n");
-      o.msgPur("  │\n");
-      o.msgPur("  │"); o.msgYel("    ☐ ☐ ☐"); o.msgMag("       [" + s1p1 + "] [" + s1p2 + "] [" + s1p3 + "]\n");
-      o.msgPur("  │\n");
-      o.msgPur("  │\n");
-      o.msgPur("  │"); o.msgYel("  ☐ ☐ ☐ ☐ ☐"); o.msgMag("     [" + s2p1 + "] [" + s2p2 + "] [" + s2p3 + "] [" + s2p4 + "] [" + s2p5 + "]\n");
-      o.msgPur("  │\n");
-      o.msgPur("  │"); o.msgYel("      ☐\n");
-      o.msgPur("  │"); o.msgYel("      ☐"); o.msgMag("         [" + s3p1 + "] [" + s3p2 + "] [" + s3p3 + "]\n");
-      o.msgPur("  │"); o.msgYel("      ☐\n");
-      o.msgPur("  ┕─────────────────────────────────────────────┙\n\n");
-    }
-  }
 
 }
