@@ -10,7 +10,7 @@ public class Main {
 		o.msgCya("Try to hit the three ships within 30 guesses.\n\n");
 
     b.createShips();
-    b.showShips(false); // change to 'true' to get ship coordinates
+    b.showShips(true); // change to 'true' to get ship coordinates
     u.handleLogs();
 
 		int guesses = 30;

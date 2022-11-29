@@ -31,36 +31,40 @@ class Board {
       
       // Ship 1
       String ship1Row = "";
-      if (rowSetArray[0] == 0) ship1Row = "A";
-  		else if (rowSetArray[0] == 1) ship1Row = "B";
-  		else if (rowSetArray[0] == 2) ship1Row = "C";
-  		else if (rowSetArray[0] == 3) ship1Row = "D";
-  		else if (rowSetArray[0] == 4) ship1Row = "E";
-  		else if (rowSetArray[0] == 5) ship1Row = "F";
-  		else if (rowSetArray[0] == 6) ship1Row = "G";
-  		else if (rowSetArray[0] == 7) ship1Row = "H";
-  		else if (rowSetArray[0] == 8) ship1Row = "I";
-  		else if (rowSetArray[0] == 9) ship1Row = "J";
-      else if (rowSetArray[0] == 10) ship1Row = "K";
-      else if (rowSetArray[0] == 11) ship1Row = "L";
+      switch (rowSetArray[0]) {
+        case 0: ship1Row = "A"; break;
+        case 1: ship1Row = "B"; break;
+        case 2: ship1Row = "C"; break;
+        case 3: ship1Row = "D"; break;
+        case 4: ship1Row = "E"; break;
+        case 5: ship1Row = "F"; break;
+        case 6: ship1Row = "G"; break;
+        case 7: ship1Row = "H"; break;
+        case 8: ship1Row = "I"; break;
+        case 9: ship1Row = "J"; break;
+        case 10: ship1Row = "K"; break;
+        case 11: ship1Row = "L"; break;
+      }
       s1p1 = ship1Row + colSetArray[0];
       s1p2 = ship1Row + (colSetArray[0] + 1);
       s1p3 = ship1Row + (colSetArray[0] + 2);
       
       // Ship 2
       String ship2Row = "";
-      if (rowSetArray[1] == 0) ship2Row = "A";
-  		else if (rowSetArray[1] == 1) ship2Row = "B";
-  		else if (rowSetArray[1] == 2) ship2Row = "C";
-  		else if (rowSetArray[1] == 3) ship2Row = "D";
-  		else if (rowSetArray[1] == 4) ship2Row = "E";
-  		else if (rowSetArray[1] == 5) ship2Row = "F";
-  		else if (rowSetArray[1] == 6) ship2Row = "G";
-  		else if (rowSetArray[1] == 7) ship2Row = "H";
-  		else if (rowSetArray[1] == 8) ship2Row = "I";
-  		else if (rowSetArray[1] == 9) ship2Row = "J";
-      else if (rowSetArray[1] == 10) ship2Row = "K";
-      else if (rowSetArray[1] == 11) ship2Row = "L";
+      switch (rowSetArray[1]) {
+        case 0: ship2Row = "A"; break;
+        case 1: ship2Row = "B"; break;
+        case 2: ship2Row = "C"; break;
+        case 3: ship2Row = "D"; break;
+        case 4: ship2Row = "E"; break;
+        case 5: ship2Row = "F"; break;
+        case 6: ship2Row = "G"; break;
+        case 7: ship2Row = "H"; break;
+        case 8: ship2Row = "I"; break;
+        case 9: ship2Row = "J"; break;
+        case 10: ship2Row = "K"; break;
+        case 11: ship2Row = "L"; break;
+      }
       s2p1 = ship2Row + colSetArray[1];
       s2p2 = ship2Row + (colSetArray[1] + 1);
       s2p3 = ship2Row + (colSetArray[1] + 2);
@@ -86,42 +90,48 @@ class Board {
       String ship3Row1 = "";
       String ship3Row2 = "";
       String ship3Row3 = "";
-      if (VrowSetArray[0] == 0) ship3Row1 = "A";
-    	else if (VrowSetArray[0] == 1) ship3Row1 = "B";
-    	else if (VrowSetArray[0] == 2) ship3Row1 = "C";
-    	else if (VrowSetArray[0] == 3) ship3Row1 = "D";
-    	else if (VrowSetArray[0] == 4) ship3Row1 = "E";
-    	else if (VrowSetArray[0] == 5) ship3Row1 = "F";
-    	else if (VrowSetArray[0] == 6) ship3Row1 = "G";
-    	else if (VrowSetArray[0] == 7) ship3Row1 = "H";
-    	else if (VrowSetArray[0] == 8) ship3Row1 = "I";
-    	else if (VrowSetArray[0] == 9) ship3Row1 = "J";
-      else if (VrowSetArray[0] == 10) ship3Row1 = "K";
-      else if (VrowSetArray[0] == 11) ship3Row1 = "L";
-      if ((VrowSetArray[0] + 1) == 0) ship3Row2 = "A";
-    	else if ((VrowSetArray[0] + 1) == 1) ship3Row2 = "B";
-    	else if ((VrowSetArray[0] + 1) == 2) ship3Row2 = "C";
-    	else if ((VrowSetArray[0] + 1) == 3) ship3Row2 = "D";
-    	else if ((VrowSetArray[0] + 1) == 4) ship3Row2 = "E";
-    	else if ((VrowSetArray[0] + 1) == 5) ship3Row2 = "F";
-    	else if ((VrowSetArray[0] + 1) == 6) ship3Row2 = "G";
-    	else if ((VrowSetArray[0] + 1) == 7) ship3Row2 = "H";
-    	else if ((VrowSetArray[0] + 1) == 8) ship3Row2 = "I";
-    	else if ((VrowSetArray[0] + 1) == 9) ship3Row2 = "J";
-      else if ((VrowSetArray[0] + 1) == 10) ship3Row2 = "K";
-      else if ((VrowSetArray[0] + 1) == 11) ship3Row2 = "L";
-      if ((VrowSetArray[0] + 2) == 0) ship3Row3 = "A";
-    	else if ((VrowSetArray[0] + 2) == 1) ship3Row3 = "B";
-    	else if ((VrowSetArray[0] + 2) == 2) ship3Row3 = "C";
-    	else if ((VrowSetArray[0] + 2) == 3) ship3Row3 = "D";
-    	else if ((VrowSetArray[0] + 2) == 4) ship3Row3 = "E";
-    	else if ((VrowSetArray[0] + 2) == 5) ship3Row3 = "F";
-    	else if ((VrowSetArray[0] + 2) == 6) ship3Row3 = "G";
-    	else if ((VrowSetArray[0] + 2) == 7) ship3Row3 = "H";
-    	else if ((VrowSetArray[0] + 2) == 8) ship3Row3 = "I";
-    	else if ((VrowSetArray[0] + 2) == 9) ship3Row3 = "J";
-      else if ((VrowSetArray[0] + 2) == 10) ship3Row3 = "K";
-      else if ((VrowSetArray[0] + 2) == 11) ship3Row3 = "L";
+      switch (VrowSetArray[0]) {
+        case 0: ship3Row1 = "A"; break;
+        case 1: ship3Row1 = "B"; break;
+        case 2: ship3Row1 = "C"; break;
+        case 3: ship3Row1 = "D"; break;
+        case 4: ship3Row1 = "E"; break;
+        case 5: ship3Row1 = "F"; break;
+        case 6: ship3Row1 = "G"; break;
+        case 7: ship3Row1 = "H"; break;
+        case 8: ship3Row1 = "I"; break;
+        case 9: ship3Row1 = "J"; break;
+        case 10: ship3Row1 = "K"; break;
+        case 11: ship3Row1 = "L"; break;
+      }
+      switch (VrowSetArray[0] + 1) {
+        case 0: ship3Row2 = "A"; break;
+        case 1: ship3Row2 = "B"; break;
+        case 2: ship3Row2 = "C"; break;
+        case 3: ship3Row2 = "D"; break;
+        case 4: ship3Row2 = "E"; break;
+        case 5: ship3Row2 = "F"; break;
+        case 6: ship3Row2 = "G"; break;
+        case 7: ship3Row2 = "H"; break;
+        case 8: ship3Row2 = "I"; break;
+        case 9: ship3Row2 = "J"; break;
+        case 10: ship3Row2 = "K"; break;
+        case 11: ship3Row2 = "L"; break;
+      }
+      switch (VrowSetArray[0] + 2) {
+        case 0: ship3Row3 = "A"; break;
+        case 1: ship3Row3 = "B"; break;
+        case 2: ship3Row3 = "C"; break;
+        case 3: ship3Row3 = "D"; break;
+        case 4: ship3Row3 = "E"; break;
+        case 5: ship3Row3 = "F"; break;
+        case 6: ship3Row3 = "G"; break;
+        case 7: ship3Row3 = "H"; break;
+        case 8: ship3Row3 = "I"; break;
+        case 9: ship3Row3 = "J"; break;
+        case 10: ship3Row3 = "K"; break;
+        case 11: ship3Row3 = "L"; break;
+      }
       s3p1 = ship3Row1 + VcolSetArray[0];
       s3p2 = ship3Row2 + VcolSetArray[0];
       s3p3 = ship3Row3 + VcolSetArray[0];
@@ -148,33 +158,35 @@ class Board {
         userInput.equals(s3p1) || userInput.equals(s3p2) || userInput.equals(s3p3)
     ) {
       hit = true;
-      if (row.equals("A")) { A[column] = TXT_GREEN + "✘";
-      } else if (row.equals("B")) { B[column] = TXT_GREEN + "✘";
-      } else if (row.equals("C")) { C[column] = TXT_GREEN + "✘";
-      } else if (row.equals("D")) { D[column] = TXT_GREEN + "✘";
-      } else if (row.equals("E")) { E[column] = TXT_GREEN + "✘";
-      } else if (row.equals("F")) { F[column] = TXT_GREEN + "✘";
-      } else if (row.equals("G")) { G[column] = TXT_GREEN + "✘";
-      } else if (row.equals("H")) { H[column] = TXT_GREEN + "✘";
-      } else if (row.equals("I")) { I[column] = TXT_GREEN + "✘";
-      } else if (row.equals("J")) { J[column] = TXT_GREEN + "✘";
-      } else if (row.equals("K")) { K[column] = TXT_GREEN + "✘";
-      } else if (row.equals("L")) { L[column] = TXT_GREEN + "✘";
-      } else { o.msgErr(); }
+      switch (row) {
+        case "A": A[column] = TXT_GREEN + "✘"; break;
+        case "B": B[column] = TXT_GREEN + "✘"; break;
+        case "C": C[column] = TXT_GREEN + "✘"; break;
+        case "D": D[column] = TXT_GREEN + "✘"; break;
+        case "E": E[column] = TXT_GREEN + "✘"; break;
+        case "F": F[column] = TXT_GREEN + "✘"; break;
+        case "G": G[column] = TXT_GREEN + "✘"; break;
+        case "H": H[column] = TXT_GREEN + "✘"; break;
+        case "I": I[column] = TXT_GREEN + "✘"; break;
+        case "J": J[column] = TXT_GREEN + "✘"; break;
+        case "K": K[column] = TXT_GREEN + "✘"; break;
+        case "L": L[column] = TXT_GREEN + "✘"; break;
+      }
     } else {
-      if (row.equals("A")) { A[column] = TXT_BLACK + "◌";
-      } else if (row.equals("B")) { B[column] = TXT_BLACK + "◌";
-      } else if (row.equals("C")) { C[column] = TXT_BLACK + "◌";
-      } else if (row.equals("D")) { D[column] = TXT_BLACK + "◌";
-      } else if (row.equals("E")) { E[column] = TXT_BLACK + "◌";
-      } else if (row.equals("F")) { F[column] = TXT_BLACK + "◌";
-      } else if (row.equals("G")) { G[column] = TXT_BLACK + "◌";
-      } else if (row.equals("H")) { H[column] = TXT_BLACK + "◌";
-      } else if (row.equals("I")) { I[column] = TXT_BLACK + "◌";
-      } else if (row.equals("J")) { J[column] = TXT_BLACK + "◌";
-      } else if (row.equals("K")) { K[column] = TXT_BLACK + "◌";
-      } else if (row.equals("L")) { L[column] = TXT_BLACK + "◌";
-      } else { o.msgErr(); }
+      switch (row) {
+        case "A": A[column] = TXT_BLACK + "◌"; break;
+        case "B": B[column] = TXT_BLACK + "◌"; break;
+        case "C": C[column] = TXT_BLACK + "◌"; break;
+        case "D": D[column] = TXT_BLACK + "◌"; break;
+        case "E": E[column] = TXT_BLACK + "◌"; break;
+        case "F": F[column] = TXT_BLACK + "◌"; break;
+        case "G": G[column] = TXT_BLACK + "◌"; break;
+        case "H": H[column] = TXT_BLACK + "◌"; break;
+        case "I": I[column] = TXT_BLACK + "◌"; break;
+        case "J": J[column] = TXT_BLACK + "◌"; break;
+        case "K": K[column] = TXT_BLACK + "◌"; break;
+        case "L": L[column] = TXT_BLACK + "◌"; break;
+      }
     }
 
     // Display hit or miss
