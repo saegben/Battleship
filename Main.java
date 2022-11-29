@@ -6,25 +6,19 @@ public class Main {
     Board b = new Board();
     UserHandling u = new UserHandling();
 
-    // Intro
 		o.msgBlu("\nWelcome to Battleship!\n");
-		o.msgCya("Try to hit my three ships within 30 guesses.\n\n");
+		o.msgCya("Try to hit the three ships within 30 guesses.\n\n");
 
-    // Setup
     b.createShips();
     b.showShips(false); // change to 'true' to get ship coordinates
     u.handleLogs();
 
-    // Handle game
-    boolean win = false;
 		int guesses = 30;
-    
+
 		while (true) { 
-      // Display
       u.handleGuesses(guesses);
 			b.showBoard();
 
-      // Ask for user input until valid response      
       boolean askUser = true;
       while (askUser) {
         if ((u.checkInput(u.promptRowInput(), u.promptColumnInput())) == false) {
@@ -33,31 +27,24 @@ public class Main {
         }
       }
 
-      // Check win status
 			int hits = b.handleMove(u.getRowInput(), u.getColumnInput());
 
+      // Check for win
       if (hits == 11) {
-        win = true;
+        b.showBoard();
+        o.msgGre("\n\n───────────────────────────────────────────────");
+        o.msgLim("\n              You sunk every ship!");
+			  o.msgLim("\n             Thanks for playing!!!!");
+        o.msgGre("\n───────────────────────────────────────────────");
         break;
+      } else if (guesses == 0) {
+        b.showBoard();
+        o.msgPur("\n\n───────────────────────────────────────────────");
+			  o.msgMag("\n                   GAME OVER");
+			  o.msgMag("\n             Thanks for playing!!!!");
+        o.msgPur("\n───────────────────────────────────────────────");
+        break; 
       }
-      else if (guesses == 0) {
-        break;
-      } 
-
-		}
-
-    if (win == true) {
-      b.showBoard();
-      o.msgGre("\n\n───────────────────────────────────────────────");
-      o.msgLim("\n              You sunk my ships!!!");
-			o.msgLim("\n             Thanks for playing!!!!");
-      o.msgGre("\n───────────────────────────────────────────────");
-		} else {
-      b.showBoard();
-      o.msgPur("\n\n───────────────────────────────────────────────");
-			o.msgMag("\n                   GAME OVER");
-			o.msgMag("\n             Thanks for playing!!!!");
-      o.msgPur("\n───────────────────────────────────────────────");
 		}
     
 	}
