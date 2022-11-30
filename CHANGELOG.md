@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ------------------
 
-## **LATEST: [1.3.0] - 2022/11/29**
+## **LATEST: [1.3.1] - 2022/11/30**
+
+### Added
+
+- Different game board variants depending on state of game (currently playing, win, lose)
+
+------------------
+
+## [1.3.0] - 2022/11/29
 
 ### Added
 

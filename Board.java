@@ -204,7 +204,6 @@ class Board {
   // Game board
 	public void showBoard (String gameState) {
     if (gameState == "playing") {
-      System.out.println("current game state: PLAYING");
       o.msgYel("┍─────────────────  "); o.msgCya("GAME BOARD"); o.msgYel("  ──────────────────┑\n");
 		  o.msgYel("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgYel(" │\n");
       o.msgYel("│   ┍─────────────────────────────────────────────┥\n");
@@ -238,7 +237,6 @@ class Board {
       o.msgYel("\n┕─────────────────────────────────────────────────┙\n");
     }
     else if (gameState == "lose") {
-      System.out.println("current game state: LOSE");
       o.msgPin("┍─────────────────  "); o.msgRed("GAME BOARD"); o.msgPin("  ──────────────────┑\n");
 		  o.msgPin("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgPin(" │\n");
       o.msgPin("│   ┍─────────────────────────────────────────────┥\n");
@@ -272,7 +270,6 @@ class Board {
       o.msgPin("\n┕─────────────────────────────────────────────────┙\n");
     }
     else if (gameState == "win") {
-      System.out.println("current game state: WIN");
       o.msgLim("┍─────────────────  "); o.msgGre("GAME BOARD"); o.msgLim("  ──────────────────┑\n");
 		  o.msgLim("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgLim(" │\n");
       o.msgLim("│   ┍─────────────────────────────────────────────┥\n");
