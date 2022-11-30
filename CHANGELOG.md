@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Cleaned up code
+- Cleaned up and optimized code
 
 ### Removed
 
@@ -36,7 +36,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Cleaned up code
+- Cleaned up and optimized code
 
 ------------------
 
@@ -76,7 +76,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Cleaned up code
+- Cleaned up and optimized code
 
 ------------------
 
@@ -96,11 +96,11 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Cleaned up code
+- Cleaned up and optimized code
 
 ### Fixed
 
-- Error not counting / displaying hits 
+- Error not counting or number of displaying hits on board
 
 ------------------
 
@@ -108,7 +108,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Better ship generation
+- Improved ship generation
 
 ------------------
 
