@@ -202,38 +202,110 @@ class Board {
   }
 
   // Game board
-	public void showBoard () {
-    o.msgYel("┍─────────────────  "); o.msgCya("GAME BOARD"); o.msgYel("  ──────────────────┑\n");
-		o.msgYel("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgYel(" │\n");
-    o.msgYel("│   ┍─────────────────────────────────────────────┥\n");
+	public void showBoard (String gameState) {
+    if (gameState == "playing") {
+      System.out.println("current game state: PLAYING");
+      o.msgYel("┍─────────────────  "); o.msgCya("GAME BOARD"); o.msgYel("  ──────────────────┑\n");
+		  o.msgYel("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgYel(" │\n");
+      o.msgYel("│   ┍─────────────────────────────────────────────┥\n");
 		
-    o.msgYel("│ "); o.msgWhi("A"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(A[idx] + "  "); }    
-		o.msgYel("\n│ "); o.msgWhi("B"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(B[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("C"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(C[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("D"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(D[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("E"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(E[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("F"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(F[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("G"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(G[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("H"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(H[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("I"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(I[idx] + "  "); }
-		o.msgYel("\n│ "); o.msgWhi("J"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(J[idx] + "  "); }
-    o.msgYel("\n│ "); o.msgWhi("K"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(K[idx] + "  "); }
-    o.msgYel("\n│ "); o.msgWhi("L"); o.msgYel(" │ ");
-		for (int idx = 1; idx < 16; ++idx) { o.msgWhi(L[idx] + "  "); }
+      o.msgYel("│ "); o.msgWhi("A"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(A[idx] + "  "); }    
+		  o.msgYel("\n│ "); o.msgWhi("B"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(B[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("C"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(C[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("D"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(D[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("E"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(E[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("F"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(F[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("G"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(G[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("H"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(H[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("I"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(I[idx] + "  "); }
+		  o.msgYel("\n│ "); o.msgWhi("J"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(J[idx] + "  "); }
+      o.msgYel("\n│ "); o.msgWhi("K"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(K[idx] + "  "); }
+      o.msgYel("\n│ "); o.msgWhi("L"); o.msgYel(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(L[idx] + "  "); }
     
-    o.msgYel("\n│   ┕─────────────────────────────────────────────┥");
-    o.msgYel("\n┕─────────────────────────────────────────────────┙\n");
+      o.msgYel("\n│   ┕─────────────────────────────────────────────┥");
+      o.msgYel("\n┕─────────────────────────────────────────────────┙\n");
+    }
+    else if (gameState == "lose") {
+      System.out.println("current game state: LOSE");
+      o.msgPin("┍─────────────────  "); o.msgRed("GAME BOARD"); o.msgPin("  ──────────────────┑\n");
+		  o.msgPin("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgPin(" │\n");
+      o.msgPin("│   ┍─────────────────────────────────────────────┥\n");
+		
+      o.msgPin("│ "); o.msgWhi("A"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(A[idx] + "  "); }    
+		  o.msgPin("\n│ "); o.msgWhi("B"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(B[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("C"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(C[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("D"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(D[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("E"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(E[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("F"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(F[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("G"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(G[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("H"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(H[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("I"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(I[idx] + "  "); }
+		  o.msgPin("\n│ "); o.msgWhi("J"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(J[idx] + "  "); }
+      o.msgPin("\n│ "); o.msgWhi("K"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(K[idx] + "  "); }
+      o.msgPin("\n│ "); o.msgWhi("L"); o.msgPin(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(L[idx] + "  "); }
+    
+      o.msgPin("\n│   ┕─────────────────────────────────────────────┥");
+      o.msgPin("\n┕─────────────────────────────────────────────────┙\n");
+    }
+    else if (gameState == "win") {
+      System.out.println("current game state: WIN");
+      o.msgLim("┍─────────────────  "); o.msgGre("GAME BOARD"); o.msgLim("  ──────────────────┑\n");
+		  o.msgLim("│ "); o.msgWhi("    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15"); o.msgLim(" │\n");
+      o.msgLim("│   ┍─────────────────────────────────────────────┥\n");
+		
+      o.msgLim("│ "); o.msgWhi("A"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(A[idx] + "  "); }    
+		  o.msgLim("\n│ "); o.msgWhi("B"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(B[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("C"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(C[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("D"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(D[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("E"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(E[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("F"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(F[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("G"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(G[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("H"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(H[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("I"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(I[idx] + "  "); }
+		  o.msgLim("\n│ "); o.msgWhi("J"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(J[idx] + "  "); }
+      o.msgLim("\n│ "); o.msgWhi("K"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(K[idx] + "  "); }
+      o.msgLim("\n│ "); o.msgWhi("L"); o.msgLim(" │ ");
+		  for (int idx = 1; idx < 16; ++idx) { o.msgWhi(L[idx] + "  "); }
+    
+      o.msgLim("\n│   ┕─────────────────────────────────────────────┥");
+      o.msgLim("\n┕─────────────────────────────────────────────────┙\n");
+    }
+
 	}
 
   // Show Ship Pieces

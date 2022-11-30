@@ -17,7 +17,7 @@ public class Main {
 
 		while (true) { 
       u.handleGuesses(guesses);
-			b.showBoard();
+			b.showBoard("playing");
 
       boolean askUser = true;
       while (askUser) {
@@ -31,18 +31,18 @@ public class Main {
 
       // Check for win
       if (hits == 11) {
-        b.showBoard();
+        b.showBoard("win");
         o.msgGre("\n\n───────────────────────────────────────────────");
         o.msgLim("\n              You sunk every ship!");
 			  o.msgLim("\n             Thanks for playing!!!!");
         o.msgGre("\n───────────────────────────────────────────────");
         break;
       } else if (guesses == 0) {
-        b.showBoard();
-        o.msgPur("\n\n───────────────────────────────────────────────");
-			  o.msgMag("\n                   GAME OVER");
-			  o.msgMag("\n             Thanks for playing!!!!");
-        o.msgPur("\n───────────────────────────────────────────────");
+        b.showBoard("lose");
+        o.msgRed("\n\n───────────────────────────────────────────────");
+			  o.msgPin("\n                   GAME OVER");
+			  o.msgPin("\n             Thanks for playing!!!!");
+        o.msgRed("\n───────────────────────────────────────────────");
         break; 
       }
 		}
